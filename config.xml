@@ -3,17 +3,17 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.hello-world"
-        version   = "1.0.0">
+        id        = "facciamo"
+        version   = "0.0.1">
 
-    <name>Hello World</name>
+    <name>Facciamo!</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Le illustrazioni di Antonella Abbatiello in un libro pubblicato da Topipittori e una app dedicati al soggetto più affascinante del mondo: il volto umano. A misura di bambino, per interessare, incuriosire, stimolare la creatività nel pieno rispetto dei tempi, dei modi e dei bisogni dei più piccoli.
     </description>
 
-    <author href="http://phonegap.com" email="support@phonegap.com">
-        PhoneGap Team
+    <author href="http://www.facciamo.eu" email="info@facciamo.eu">
+        Facciamo! Team
     </author>
 
     <!--
