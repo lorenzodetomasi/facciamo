@@ -83,18 +83,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 @font-face {
   font-family: Orator;
-  src: local("Orator Std"), url("fonts/OratorStd.otf");
+  src: url("../fonts/OratorStd.otf");
   font-weight: normal;
   font-style: normal;
 }
 
-/* line 48, ../sass/app.scss */
+/* line 49, ../sass/app.scss */
 * {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
-/* line 52, ../sass/app.scss */
+/* line 53, ../sass/app.scss */
 body {
   -webkit-touch-callout: none;
   /* prevent callout to copy image, etc when tap to hold */
@@ -113,30 +113,30 @@ body {
 }
 
 /* Portrait layout (default) */
-/* line 68, ../sass/app.scss */
+/* line 69, ../sass/app.scss */
 h1, h2, h3,
 a {
-  font-family: OratorStd;
+  font-family: Orator;
   text-transform: lowercase;
   font-weight: normal;
 }
-/* line 37, ../sass/app.scss */
+/* line 38, ../sass/app.scss */
 h1 em, h2 em, h3 em,
 a em {
   font-style: normal;
 }
 
-/* line 71, ../sass/app.scss */
+/* line 72, ../sass/app.scss */
 a {
   color: #0076bc;
   text-decoration: none;
 }
-/* line 74, ../sass/app.scss */
+/* line 75, ../sass/app.scss */
 a:hover {
   color: #cd031b;
 }
 
-/* line 79, ../sass/app.scss */
+/* line 80, ../sass/app.scss */
 body,
 .page {
   top: 0;
@@ -155,11 +155,11 @@ body,
   width: 100%;
 }
 
-/* line 94, ../sass/app.scss */
+/* line 95, ../sass/app.scss */
 .page .content {
   padding: 0;
 }
-/* line 98, ../sass/app.scss */
+/* line 99, ../sass/app.scss */
 .page #header,
 .page #footer {
   -webkit-box-sizing: border-box;
@@ -169,43 +169,43 @@ body,
   left: 0;
   width: 100%;
 }
-/* line 104, ../sass/app.scss */
+/* line 105, ../sass/app.scss */
 .page #header {
   top: 0;
 }
-/* line 107, ../sass/app.scss */
+/* line 108, ../sass/app.scss */
 .page #footer {
   bottom: 0;
 }
-/* line 109, ../sass/app.scss */
+/* line 110, ../sass/app.scss */
 .page #footer > * {
   width: 100%;
 }
-/* line 111, ../sass/app.scss */
+/* line 112, ../sass/app.scss */
 .page #footer > * > * {
   display: table-cell;
 }
 
-/* line 119, ../sass/app.scss */
+/* line 120, ../sass/app.scss */
 #splash #header img {
   width: 100%;
   height: auto;
 }
-/* line 124, ../sass/app.scss */
+/* line 125, ../sass/app.scss */
 #splash #footer {
   background-color: #ffcb05;
 }
-/* line 126, ../sass/app.scss */
+/* line 127, ../sass/app.scss */
 #splash #footer #logos_container {
   height: 100%;
 }
-/* line 128, ../sass/app.scss */
+/* line 129, ../sass/app.scss */
 #splash #footer #logos_container > div {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
 }
-/* line 132, ../sass/app.scss */
+/* line 133, ../sass/app.scss */
 #splash #footer #logos_container > div img {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -215,45 +215,45 @@ body,
   padding: 10%;
 }
 
-/* line 142, ../sass/app.scss */
+/* line 143, ../sass/app.scss */
 #menu {
   display: table;
   padding: 0 5%;
   color: #000;
   background-color: #f3f3f3;
 }
-/* line 147, ../sass/app.scss */
+/* line 148, ../sass/app.scss */
 #menu .container {
   display: table-cell;
   width: 100%;
   height: 100%;
   vertical-align: middle;
 }
-/* line 154, ../sass/app.scss */
+/* line 155, ../sass/app.scss */
 #menu #header,
 #menu #footer {
   padding: 2.5% 5%;
 }
-/* line 157, ../sass/app.scss */
+/* line 158, ../sass/app.scss */
 #menu #header {
   padding-top: 5%;
 }
-/* line 159, ../sass/app.scss */
+/* line 160, ../sass/app.scss */
 #menu #header h1 {
   font-size: 2em;
   color: #cd031b;
 }
-/* line 163, ../sass/app.scss */
+/* line 164, ../sass/app.scss */
 #menu #header h2 {
   line-height: 2.4em;
   text-align: right;
 }
-/* line 168, ../sass/app.scss */
+/* line 169, ../sass/app.scss */
 #menu .content {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 172, ../sass/app.scss */
+/* line 173, ../sass/app.scss */
 #menu .faces {
   display: -moz-inline-stack;
   display: inline-block;
@@ -262,50 +262,50 @@ body,
   zoom: 1;
   *display: inline;
 }
-/* line 174, ../sass/app.scss */
+/* line 175, ../sass/app.scss */
 #menu .faces .face_thumbnail {
   float: left;
   margin-bottom: .5%;
   margin-right: 1%;
   width: 24.25%;
 }
-/* line 179, ../sass/app.scss */
+/* line 180, ../sass/app.scss */
 #menu .faces .face_thumbnail a {
   width: 100%;
   height: auto;
 }
-/* line 183, ../sass/app.scss */
+/* line 184, ../sass/app.scss */
 #menu .faces .face_thumbnail img {
   background-color: white;
   width: 100%;
   height: auto;
 }
-/* line 188, ../sass/app.scss */
+/* line 189, ../sass/app.scss */
 #menu .faces .face_thumbnail:nth-of-type(4n) {
   margin-right: 0;
 }
-/* line 195, ../sass/app.scss */
+/* line 196, ../sass/app.scss */
 #menu .faces .face_thumbnail:nth-of-type(8n+7) img, #menu .faces .face_thumbnail:nth-of-type(8n+5) img, #menu .faces .face_thumbnail:nth-of-type(8n+4) img, #menu .faces .face_thumbnail:nth-of-type(8n+2) img {
   background-color: black;
 }
-/* line 199, ../sass/app.scss */
+/* line 200, ../sass/app.scss */
 #menu .faces .face_thumbnail:last-child {
   display: none;
 }
-/* line 206, ../sass/app.scss */
+/* line 207, ../sass/app.scss */
 #menu #footer {
   text-align: right;
 }
 
 @media screen and (min-width: 480px) {
-  /* line 211, ../sass/app.scss */
+  /* line 212, ../sass/app.scss */
   .page {
     font-size: 1.4em;
   }
 }
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1 / 1) and (min-width: 400px) {
-  /* line 217, ../sass/app.scss */
+  /* line 218, ../sass/app.scss */
   .app {
     background-position: left center;
     padding: 75px 0px 75px 170px;

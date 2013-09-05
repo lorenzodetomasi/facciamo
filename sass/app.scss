@@ -28,10 +28,11 @@ $android_brightblue: #00ddff;
 @import "compass/css3/box-sizing";
 @import "compass/css3/transition";
 @import "compass/css3/inline-block";
+@import "compass/css3/font-face";
 
 $default_area_height: 256px;
 @mixin fontOrator {
-		font-family: OratorStd;
+		font-family: Orator;
 		text-transform: lowercase;
 		font-weight: normal;
 		em {
@@ -41,7 +42,7 @@ $default_area_height: 256px;
 
 @font-face {
 	font-family: Orator;
-	src: local("Orator Std"), url("fonts/OratorStd.otf");
+	src: url("../fonts/OratorStd.otf");
 	font-weight: normal;
 	font-style: normal;
 }
