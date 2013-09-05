@@ -63,7 +63,7 @@ page B---pageshow
 						} else if(navigatorLanguage){
 								lang = navigatorLanguage;
 						}
-						if(lang=='it_IT'){
+						if(lang=='it_IT' || lang=='it-IT'){
 								lang = 'it';
 						}
 						//$.mobile.defaultPageTransition = 'slide';
