@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+		<head>
+				<meta charset="utf-8" />
+				<meta name="format-detection" content="telephone=no" />
+<!--
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+-->
+				<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+				<link rel="stylesheet" type="text/css" href="css/index.css" />
+				<title>Facciamo!</title>
+		</head>
+		<body>
+				<script type="text/x-handlebars" data-template-name="application">
+						{{outlet}}
+				</script>
+				<script type="text/x-handlebars" data-template-name="splash">
+						<div id="splash" class="page">
+								<header id="cover_container" class="face">
+										<img src="res/raw/facciamo_cover_it.svg" />
+										<div id="layout_footer"></div>
+								</header>
+								<footer id="logos_container">
+										<div class="logo">
+												<img src="res/raw/areamobile_logo.svg" />
+										</div>
+										<div class="logo">
+												<img src="res/raw/isotype_logo.svg" />
+										</div>
+										<div class="logo">
+												<img src="res/raw/topipittori_logo.svg" />
+										</div>
+								</footer>
+						</div>
+				</script>
+				<script type="text/x-handlebars" data-template-name="index">
+				</script>
+				<script type="text/x-handlebars" data-template-name="for_parents">
+						<div id="for_parents" class="page">
+								<header>
+										<div class="back button">{{#link-to "index"}}<{{/link-to}}</div>
+										<h1>per i genitori</h1>
+								</header>
+								<div>
+								</div>
+						</div>
+				</script>
+<!-- Libs -->
+				<script type="text/javascript" src="phonegap.js"></script>
+				<script src="js/libs/jquery-1.9.1.js"></script>
+				<script>
+var defaultLanguage = 'it';
+var userPreferredLanguage;
+var lang;
+var navigatorLanguage = navigator.language || navigator.userLanguage;
+if(userPreferredLanguage){
+		lang = userPreferredLanguage;
+} else if(navigatorLanguage){
+		lang = navigatorLanguage;
+}
+console.log('Application language: '+lang);
+$.ajax({
+		url: 'index_'+lang+'.html',
+		dataType: 'html',
+		async: false
+}).done(function(data) {
+				console.log(data);
+				$('[data-template-name="index"]').html(data);
+});
+				</script>
+				<script src="js/libs/handlebars-1.0.0.js"></script>
+				<script src="js/libs/ember-1.0.0-rc.8.js"></script>
+				<script src="js/libs/ember-data.min.js"></script>
+<!-- Localization libs and files http://mcdowall.info/posts/getting-started-with-internationalization-i18n-in-ember-js/ -->
+				<script src="js/libs/i18n.js"></script>
+<!-- Ember.js -->
+				<script src="js/application.js"></script>
+				<script src="js/router.js"></script>
+				<script src="js/models/store.js"></script>
+				<script src="js/models/face.js"></script>
+
+<!-- Phonegap
+				<script type="text/javascript" src="js/index.js"></script>
+				<script type="text/javascript">
+								app.initialize();
+				</script>
+-->
+		</body>
+</html>

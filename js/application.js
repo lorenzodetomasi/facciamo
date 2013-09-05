@@ -1,0 +1,1 @@
+window.Facciamo = Ember.Application.create();

@@ -1,0 +1,388 @@
+{
+	"title": "Facciamo!",
+	"author": "Antonella Abbatiello",
+	"copyright": "©2013 ",
+	"all_rights_reserved": "Tutti i diritti riservati",
+	"splashpage": {
+		"logos_background": "#ffcb05"
+	},
+	"for_parents": {
+		"color": "#FF3754A0",
+		"string": "per i genitori"
+	},
+	"faces": {
+		"dove_sei": {
+			"title": "Dove sei?",
+			"subtitle": "Ti scoverà",
+			"description": "<p>È un tipo attento e segue con attenzione ogni tua mossa.</p><p>Prova a nasconderti, se ci riesci.</p>",
+			"topic": "percorsi",
+			"img_left": {
+					"svg": "dove_sei_screenshot_01",
+					"background": "#fff"
+			},
+			"img_center": {
+					"background": "#fff"
+			},
+			"img_right": {
+					"svg": "dove_sei_screenshot_02",
+					"background": "#fff"
+			}
+		},
+		"chicchirichi": {
+			"title": "Chicchirichì",
+			"web_title": "<span style=\"color: #FFF69B;\">chicchirichì</span>",
+			"subtitle": "lo sai che verso fa?",
+			"description": "<p>Quanti animali possono abitare qui dentro?</p><p>Un gatto che miagola, un’oca che starnazza, un lupo che ulula alla luna, una rana che gracida sotto il sole cocente…<br />E il pesce come fa?</p><p>Impara i versi degli animali e come si scrivono.</p>",
+			"topic": "i versi degli animali",
+		 "isBought": true,
+			"img_left": {
+					"svg": "chicchirichi_pesce_screenshot",
+					"background": "#00AEEF"
+			},
+			"img_center": {
+					"svg": "chicchirichi_gallo_screenshot",
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"svg": "chicchirichi_lupo_screenshot",
+					"background": "#FDC500"
+			}
+		},
+		"due": {
+			"title": "Due",
+			"subtitle": "ha due occhi",
+			"description": "<p>…ma può trasformarsi in un ciclope o in una mosca dai mille occhi.</p><p>Impara a contare e a riconoscere le cifre.</p>",
+			"topic": "i numeri",
+			"img_left": {
+					"svg": "due_screenshot_01",
+					"background": "#fff"
+			},
+			"img_center": {
+					"background": "#fff"
+			},
+			"img_right": {
+					"svg": "due_screenshot_02",
+					"background": "#fff"
+			}
+		},
+		"cattivo": {
+			"img": "cattivo_01.svg",
+			"title": "Cattivo",
+			"subtitle": "attento! ti spaventerà",
+			"description": "<p>Un mostro brutto e cattivo ti osserva con i suoi grandi occhi minacciosi, nascosto nel buio. <br />Se lo tocchi si arrabbia e prova a morderti, ruggendo furioso.</p><p>Avere paura è normale e ti aiuta a crescere. Con l’aiuto di mamma e papà, impara a rafforzare la fiducia in te stesso e a crescere sereno e forte.</p>",
+			"topic": "la paura",
+		 "isBought": true,
+			"img_left": {
+					"svg": "cattivo_01",
+					"background": "#000"
+			},
+			"img_center": {
+					"svg": "cattivo_02",
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "cattivo_03",
+					"background": "#000"
+			}
+		},
+		"boccuccia": {
+			"title": "Boccuccia",
+			"subtitle": "è piccola",
+			"description": "<p>… ma quanti suoni fa? Bacia, singhiozza, tossisce, ride, strilla…</p><p>Imita i suoni della bocca e impara i loro nomi.</p>",
+			"topic": "suoni onomatopeici",
+			"img_left": {
+					"svg": "boccuccia_screenshot_01",
+					"background": "#000"
+			},
+			"img_center": {
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "boccuccia_screenshot_02",
+					"background": "#000"
+			}
+		},
+		"bimbo": {
+			"title": "Bimbo",
+			"subtitle": "si emoziona",
+			"description": "<p>Se è triste, aiutalo a sorridere. Se piange, rendilo gioioso.</p><p>Scopri i sentimenti umani e le loro espressioni.</p>",
+			"topic": "le emozioni",
+			"img_left": {
+					"svg": "bimbo_screenshot_01",
+					"background": "#fff"
+			},
+			"img_center": {
+					"background": "#fff"
+			},
+			"img_right": {
+					"svg": "bimbo_screenshot_02",
+					"background": "#fff"
+			}
+		},
+		"giocoliere": {
+			"title": "Giocoliere",
+			"subtitle": "sta in equilibrio",
+			"description": "<p>È precario e può crollare.</p><p>Aiutalo a trovare il suo equilibrio e imparerai i principi della legge gravitazionale.</p>",
+			"topic": "l’equilibrio",
+			"img_left": {
+					"svg": "giocoliere_screenshot_01",
+					"background": "#000"
+			},
+			"img_center": {
+					"svg": "giocoliere_screenshot_02",
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "giocoliere_screenshot_03",
+					"background": "#000"
+			}
+		},
+		"e_gli_occhi": {
+			"title": "E gli occhi?/Eccoli",
+			"subtitle": "è la tua faccia?",
+			"description": "<p>Non ha gli occhi, ma si trasforma e ha tanti nasi, bocche e occhi tra cui puoi scegliere, per comporre la faccia che ti è più simpatica.</p><p>Divertiti a ricostruire le altre facce o a crearne nuove, divertenti, spaventose, buffe…</p>",
+			"topic": "combinazioni",
+			"img_left": {
+					"svg": "e_gli_occhi",
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"svg": "eccoli",
+					"background": "#000000"
+			},
+			"img_right": {
+					"svg": "e_gli_occhi_screenshot_01",
+					"background": "#000000"
+			}
+		},
+		"silenzioso": {
+			"title": "Silenzioso",
+			"subtitle": "è un gran chiacchierone",
+			"description": "<p>Non ha la bocca, ma non sta mai zitto.</p><p>Trova il modo per farlo tacere e salverai le tue povere orecchie.</p>",
+			"topic": "parole e voci",
+			"img_left": {
+					"svg": "silenzioso_screenshot_01",
+					"background": "#fff"
+			},
+			"img_center": {
+					"background": "#fff"
+			},
+			"img_right": {
+					"svg": "silenzioso_screenshot_02",
+					"background": "#fff"
+			}
+		},
+		"ma_si": {
+			"title": "Ma no/Ma sì!",
+			"subtitle": "ma che disordine!",
+			"description": "<p>Un colpo di vento ha mischiato occhi, bocche e nasi.</p><p>Aiutali a tornare come prima e saremo tutti felici e contenti.</p>",
+			"topic": "rapporto giusto-sbagliato",
+			"img_left": {
+					"svg": "ma_si_screenshot_01",
+					"background": "#000"
+			},
+			"img_center": {
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "ma_si_screenshot_02",
+					"background": "#000"
+			}
+		},
+		"cucu": {
+			"title": "Cucù",
+			"web_title": "<span style=\"color: #008847;\">c</span>u<span style=\"color: #008847;\">c</span>ù",
+			"subtitle": "si nasconde",
+			"description": "<p>Uno strano tipo verde scappa se lo tocchi. Dov’è? È un gran fifone o sta giocando a nascondino?</p>",
+			"topic": "rapporto dentro-fuori",
+		 "isBought": true,
+			"img_left": {
+					"svg": "cucu_screenshot_01",
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"svg": "cucu_1",
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"svg": "cucu_2_fear_03",
+					"background": "#FFFFFF"
+			}
+		},
+		"raffreddato": {
+			"title": "Raffreddato",
+			"subtitle": "vive le quattro  stagioni",
+			"description": "<p>Balla tra i fiori, si abbronza al sole, si ripara dalla pioggia, diventa un pupazzo di neve.</p><p>Conosci i colori, i suoni e le sensazioni delle quattro stagioni.</p>",
+			"topic": "le stagioni",
+			"img_left": {
+					"svg": "raffreddato_screenshot_01",
+					"background": "#000"
+			},
+			"img_center": {
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "raffreddato_screenshot_02",
+					"background": "#000"
+			}
+		},
+		"alieno": {
+			"title": "Alieno",
+			"subtitle": "vive in un altro mondo",
+			"description": "<p>È strano, diverso e molto simpatico. Si trasforma con incredibili metamorfosi per farti divertire.</p>",
+			"topic": "gli alieni",
+			"img_left": {
+					"svg": "alieno_screenshot_01",
+					"background": "#000"
+			},
+			"img_center": {
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "alieno_screenshot_02",
+					"background": "#000"
+			}
+		},
+		"oh": {
+			"title": "Oh!",
+			"subtitle": "conosce solo le vocali",
+			"description": "<p>…e le pronuncia benissimo.</p><p>Impara le vocali e come cambiano con gli accenti.</p>",
+			"topic": "le vocali",
+			"img_left": {
+					"svg": "oh_screenshot_01",
+					"background": "#fff"
+			},
+			"img_center": {
+					"background": "#fff"
+			},
+			"img_right": {
+					"svg": "oh_screenshot_02",
+					"background": "#fff"
+			}
+		},
+		"che_buio": {
+			"title": "Che buio",
+			"subtitle": "ma chi sarà?",
+			"description": "<p>Chi si nasconde dietro quei due grossi occhi?</p><p>Accendi la luce e scoprilo.</p>",
+			"topic": "sorprese",
+			"img_left": {
+					"svg": "che_buio",
+					"background": "#000"
+			},
+			"img_center": {
+					"svg": "che_buio_eccoli_01",
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "eccoli",
+					"background": "#fff"
+			}
+		},
+		"arrossisco": {
+			"title": "Arrossisco",
+			"subtitle": "è un camaleonte",
+			"description": "<p>Si emoziona e cambia colore.</p><p>Scopri, tinte, note e verbi insieme a lui.</p>",
+			"topic": "i colori",
+			"img_left": {
+					"svg": "arrossisco_screenshot_01",
+					"background": "#fff"
+			},
+			"img_center": {
+					"background": "#fff"
+			},
+			"img_right": {
+					"svg": "arrossisco_screenshot_02",
+					"background": "#fff"
+			}
+		},
+		"nero": {
+			"title": "Nero",
+			"subtitle": "fa tic tac",
+			"description": "<p>Sposta le sue lancette e passa dal giorno alla notte.</p><p>Impara come scorre il tempo e come si scrivono le ore del giorno</p>",
+			"topic": "le ore del giorno",
+			"img_left": {
+					"svg": "nero_screenshot_01",
+					"background": "#fff"
+			},
+			"img_center": {
+					"background": "#fff"
+			},
+			"img_right": {
+					"svg": "nero_screenshot_02",
+					"background": "#fff"
+			}
+		},
+		"testa_scura": {
+			"img": "testascura_icon.svg",
+			"title": "Testa chiara/Testa scura",
+			"subtitle": "bianco o nero",
+			"description": "<p>Da una testa escono tante idee, grandi e piccole. Creane tante, sempre nuove, come farebbe un artista o un ingegnere.</p><p>Girale, schiacciale, allargale, invertile usando la tua creatività e la tua fantasia. È un bel gioco che non finisce mai.</p>",
+			"topic": "rapporto positivo-negativo",
+		 "isBought": true,
+			"img_left": {
+					"svg": "testascura_screenshot_01",
+					"background": "#000"
+			},
+			"img_center": {
+					"svg": "testascura_icon",
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "testascura_screenshot_02",
+					"background": "#FFF"
+			}
+		},
+		"ciao": {
+			"title": "Ciao",
+			"web_title": "<span style=\"color: #CD031B;\">ciao</span>",
+			"subtitle": "ti saluta da ogni dove",
+			"description": "<p>È un grande viaggiatore e un poliglotta.</p><p>Imparerai che la stessa parola si può dire in tante lingue diverse.</p>",
+			"topic": "le lingue straniere",
+			"img_left": {
+					"svg": "ciao_screenshot_01",
+					"background": "#fff"
+			},
+			"img_center": {
+					"background": "#fff"
+			},
+			"img_right": {
+					"svg": "ciao_screenshot_02",
+					"background": "#fff"
+			}
+		},
+		"ovale": {
+			"title": "Ovale",
+			"subtitle": "muta forma",
+			"description": "<p>Una figura contiene l’altra, come scatole cinesi.</p><p>Scopri le figure geometriche e i loro nomi.</p>",
+			"topic": "forme e dimensioni",
+			"img_left": {
+					"svg": "ovale_screenshot_01",
+					"background": "#000"
+			},
+			"img_center": {
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "ovale_screenshot_02",
+					"background": "#000"
+			}
+		},
+		"non_ce": {
+			"title": "Non c’è",
+			"subtitle": "svanisce",
+			"description": "<p>Eppure era lì. Dove sarà andato? È scappato o è diventato invisibile?</p><p>Impara i modi in cui si può sparire e ricomparire.</p>",
+			"topic": "assenza",
+			"img_left": {
+					"svg": "facce_cover",
+					"background": "#000"
+			},
+			"img_center": {
+					"background": "#000"
+			},
+			"img_right": {
+					"svg": "facce_cover",
+					"background": "#000"
+			}
+		}
+	}
+}

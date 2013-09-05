@@ -1,0 +1,220 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+$red: #cd031b;
+$blue: #0076bc;
+
+$android_darkblue: #0099cc;
+$android_lightblue: #33b5e5;
+$android_brightblue: #00ddff;
+
+@import "compass/reset.scss";
+@import "compass/layout.scss";
+@import "compass/css3/box-sizing";
+@import "compass/css3/transition";
+@import "compass/css3/inline-block";
+
+$default_area_height: 256px;
+@mixin fontOrator {
+		font-family: OratorStd;
+		text-transform: lowercase;
+		em {
+				font-style: normal;
+		}
+}
+
+@include sticky-footer($default_area_height, "#cover_container", "#layout_footer", "#logos_container");
+@font-face {
+	font-family: Orator;
+	src: local("Orator Std"), url("fonts/OratorStd.otf");
+	font-weight: normal;
+	font-style: normal;
+}
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#000;
+				color: #fff;
+    font-family: Orator, 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    margin:0px;
+    padding:0px;
+    height:100%;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+h1, h2, h3,
+a {
+		@include fontOrator;
+}
+a {
+		color: $blue;
+		text-decoration: none;
+		&:hover {
+				color: $red;
+		}
+}
+body,
+body > div {
+		position:absolute;
+		top:0;
+		right: 0;
+		bottom: 0;
+		left:0;
+		height:100%;
+		width:100%;
+		padding:0;
+		margin:0;
+}
+.page {
+		position: absolute;
+		@include box-sizing(border-box);
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		@include transition(opacity linear 1s);
+}
+#splash {
+		#cover_container {
+				img {
+						width: 100%;
+						height: auto;
+				}
+		}
+		#logos_container {
+				display: table;
+				width: 100%;
+				background-color: #ffcb05;
+				.logo {
+						display: table-cell;
+						width: 0% + (100/3);
+						height: $default_area_height;
+						vertical-align: middle;
+						text-align: center;
+						img {
+								@include box-sizing(border-box);
+								width: 100%;
+								height: auto;
+								padding: 10%;
+						}
+				}
+		}
+}
+#index {
+		display: table;
+		padding: 0 5%;
+		color: #000;
+		background-color: #f3f3f3;
+		.container {
+				display: table-cell;
+				width: 100%;
+				height: 100%;
+				vertical-align: middle;
+		}
+		header,
+		footer {
+				position: absolute;
+				@include box-sizing(border-box);
+				padding: 2.5% 5%;
+				left: 0;
+				width: 100%;
+		}
+		header {
+				top: 0;
+				padding-top: 5%;
+				h1, h2 {
+						@include inline-block(middle);
+						width: 0% + (100/2);
+						span {
+								width: 100%;
+								height: 100%;
+								display: table-cell;
+								vertical-align: bottom;
+						}
+				}
+				h1 {
+						color: $red;
+				}
+		}
+		.faces {
+				@include inline-block(middle);
+				.face_thumbnail {
+						float: left;
+						margin-bottom: .5%;
+						margin-right: 1%;
+						width: 0% + ((100 - 3)/4);
+						a {
+								width:100%;
+								height: auto;
+						}
+						img {
+								background-color: white;
+								width: 100%;
+								height: auto;
+						}
+						&:nth-of-type(4n) {
+								margin-right: 0;
+						}
+						&:nth-of-type(8n+7),
+						&:nth-of-type(8n+5),
+						&:nth-of-type(8n+4),
+						&:nth-of-type(8n+2) {
+								img {
+										background-color: black;
+								}
+						}
+						&:last-child {
+								display: none;
+						}
+						img {
+						}
+				}
+		}
+		footer {
+				bottom: 0;
+				#for_parents_button {
+						font-size: 2em;
+						text-align: right;
+				}
+		}
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
