@@ -34,6 +34,39 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+/*
+multi page template
+navigate from A to B
+
+page B---pagebeforecreate
+
+page B---pagecreate
+
+page B---pageinit
+
+page A---pagebeforehide
+
+page B---pagebeforeshow
+
+page A---pageremove
+
+page A---pagehide
+
+page B---pageshow
+*/
+						var defaultLanguage = 'it';
+						var userPreferredLanguage;
+						var lang;
+						var navigatorLanguage = navigator.language || navigator.userLanguage;
+						if(userPreferredLanguage){
+								lang = userPreferredLanguage;
+						} else if(navigatorLanguage){
+								lang = navigatorLanguage;
+						}
+						if(lang=='it_IT'){
+								lang = 'it';
+						}
+						//$.mobile.defaultPageTransition = 'slide';
 						function changePage(pageUrl,interval){
 								setTimeout(function(){
 										$.mobile.changePage(pageUrl);
