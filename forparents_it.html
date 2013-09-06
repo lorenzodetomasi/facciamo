@@ -1,9 +1,37 @@
 				<div data-role="page" id="forparents" class="page">
 						<div data-role="content" class="content">
 								<div id="header">
-										<div class="back button">{{#link-to "index"}}<{{/link-to}}</div>
-										<h1>per i genitori</h1>
+										<a href="menu_it.html"><</a>
+										<h1>Per i genitori</h1>
+										<div>
+												
+										</div>
 								</div>
+        <ul data-role="listview" data-divider-theme="" data-inset="false">
+            <li data-theme="">
+                <a href="options_it.html">
+                    Opzioni
+                </a>
+            </li>
+            <li data-theme="">
+                <a href="#page1">
+                    Tu e il tuo bambino
+                </a>
+            </li>
+            <li data-theme="">
+                <a href="#page1">
+                    Le facce
+                </a>
+            </li>
+            <li data-theme="">
+                <a href="#page1">
+                    Crediti
+                </a>
+            </li>
+        </ul>
+								<script>
+										console.log(window.localStorage.getItem("userPreferredLanguage"));
+								</script>
 						</div><!--.content-->
 				</div>
 		</body>

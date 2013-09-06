@@ -34,6 +34,31 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+						var defaultLanguage = 'it';
+						var navigatorLanguage = navigator.language || navigator.userLanguage;
+						if(!window.localStorage.getItem("userPreferredLanguage")){
+								if(navigatorLanguage){
+										if(navigatorLanguage=='it_IT' || navigatorLanguage=='it-IT'){navigatorLanguage = 'it';}
+										window.localStorage.setItem("userPreferredLanguage", navigatorLanguage);
+								} else {
+										window.localStorage.setItem("userPreferredLanguage", defaultLanguage);
+								}
+						}
+						//$.mobile.defaultPageTransition = 'slide';
+						function changePage(pageUrl,interval){
+								setTimeout(function(){
+										$.mobile.changePage(pageUrl);
+								}, interval);
+						}
+						document.addEventListener("menubutton", menuKeyDown, true);
+						function menuKeyDown() {
+        console.log('Menu button pressed.');
+      }
+						document.addEventListener("backbutton", backKeyDown, true);
+						function backKeyDown() {
+        console.log('Back button pressed.');
+								$.mobile.changePage('menu_'+window.localStorage.getItem("userPreferredLanguage")+'.html');
+      }
 /*
 multi page template
 navigate from A to B
@@ -54,27 +79,9 @@ page A---pagehide
 
 page B---pageshow
 */
-						var defaultLanguage = 'it';
-						var userPreferredLanguage;
-						var lang;
-						var navigatorLanguage = navigator.language || navigator.userLanguage;
-						if(userPreferredLanguage){
-								lang = userPreferredLanguage;
-						} else if(navigatorLanguage){
-								lang = navigatorLanguage;
-						}
-						if(lang=='it_IT' || lang=='it-IT'){
-								lang = 'it';
-						}
-						//$.mobile.defaultPageTransition = 'slide';
-						function changePage(pageUrl,interval){
-								setTimeout(function(){
-										$.mobile.changePage(pageUrl);
-								}, interval);
-						}
-						changePage("splash_"+lang+".html",0);
+						changePage("splash_"+window.localStorage.getItem("userPreferredLanguage")+".html",0);
 						$(document).on('pageshow', '#splash', function(event, ui){
-								changePage("menu_"+lang+".html",4000);
+								changePage("menu_"+window.localStorage.getItem("userPreferredLanguage")+".html",4000);
 						});
     },
 };

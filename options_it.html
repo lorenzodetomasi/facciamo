@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title></title>
+  
+  
+  
+  <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">  
+  <!-- jQuery and jQuery Mobile -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+  <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+</head>
+<body>
+<!-- Home -->
+<div data-role="page" id="page1">
+    <div data-role="content">
+        <form action="">
+										<div data-role="fieldcontain">
+														<label for="selectmenu2">
+																		Lingua:
+														</label>
+														<select id="selectmenu2" name="lang">
+																		<option value="it">
+																						Italiano
+																		</option>
+																		<option value="en">
+																						English
+																		</option>
+														</select>
+										</div>
+										<div id="autooffline" data-role="fieldcontain">
+														<fieldset data-role="controlgroup" data-type="vertical">
+																		<input id="checkbox1" name="autooffline" type="checkbox">
+																		<label for="checkbox1">
+																						Modalità offline automatica
+																		</label>
+														</fieldset>
+										</div>
+										<div id="checkboxes2" data-role="fieldcontain">
+														<fieldset data-role="controlgroup" data-type="vertical">
+																		<input id="checkbox2" name="timealert" type="checkbox">
+																		<label for="checkbox2">
+																						Avvisi gioco prolungato
+																		</label>
+														</fieldset>
+										</div>
+										<div data-role="fieldcontain">
+														<label for="selectmenu3">
+																		Avvisa
+														</label>
+														<select id="selectmenu3" name="alertafter">
+																		<option value="false">
+																						mai
+																		</option>
+																		<option value="15">
+																						ogni 15 minuti
+																		</option>
+																		<option value="30">
+																						ogni 30 minuti
+																		</option>
+																		<option value="45">
+																						ogni 45 minuti
+																		</option>
+																		<option value="60">
+																						ogni ora
+																		</option>
+														</select>
+										</div>
+										<input type="submit" data-icon="edit" data-iconpos="left" value="Salva">
+        </form>
+    </div>
+</div>
+</body>
+</html>
