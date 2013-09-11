@@ -1,0 +1,397 @@
+{
+	"title": "Facciamo!",
+	"author": "Antonella Abbatiello",
+	"copyright": "©2013 ",
+	"all_rights_reserved": "Tutti i diritti riservati",
+	"splashpage": {
+		"logos_background": "#ffcb05"
+	},
+	"for_parents": {
+		"color": "#3754A0",
+		"string": "per i genitori"
+	},
+	"faces": {
+		"dovesei": {
+			"title": "Dove sei?",
+			"web_title": "<span style=\"color: #CB021A\">dove sei?</span>",
+			"android_title": "<font fgcolor=\"#FFCB021A\">dove sei?</font>",
+			"subtitle": "Ti scoverà",
+			"description": "<p>È un tipo attento e segue con attenzione ogni tua mossa.</p><p>Prova a nasconderti, se ci riesci.</p>",
+			"topic": "percorsi",
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"chicchirichi": {
+			"title": "Chicchirichì",
+			"web_title": "<span style=\"color: #F44900;\">chicchirichì</span>",
+			"android_title": "<font fgcolor=\"#FFF44900\">chicchirichì</font>",
+			"subtitle": "lo sai che verso fa?",
+			"description": "<p>Quanti animali possono abitare qui dentro?</p><p>Un gatto che miagola, un’oca che starnazza, un lupo che ulula alla luna, una rana che gracida sotto il sole cocente…<br />E il pesce come fa?</p><p>Impara i versi degli animali e come si scrivono.</p>",
+			"topic": "i versi degli animali",
+		 "isBought": true,
+			"img_left": {
+					"svg": "chicchirichi_pesce_screenshot",
+					"background": "#00AEEF"
+			},
+			"img_center": {
+					"svg": "chicchirichi_gallo_screenshot",
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"svg": "chicchirichi_lupo_screenshot",
+					"background": "#FDC500"
+			}
+		},
+		"due": {
+			"title": "Due",
+			"web_title": "<span style=\"color: #CB021A;\">due</span>",
+			"android_title": "<font fgcolor=\"#FFCB021A\">due</font>",
+			"subtitle": "ha due occhi",
+			"description": "<p>…ma può trasformarsi in un ciclope o in una mosca dai mille occhi.</p><p>Impara a contare e a riconoscere le cifre.</p>",
+			"topic": "i numeri",
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"cattivo": {
+			"img": "cattivo_01.svg",
+			"title": "Cattivo",
+			"web_title": "<span style=\"color: #CB021A;\">cattivo</span>",
+			"android_title": "<font fgcolor=\"#FFCB021A\">cattivo</font>",
+			"subtitle": "attento! ti spaventerà",
+			"description": "<p>Un mostro brutto e cattivo ti osserva con i suoi grandi occhi minacciosi, nascosto nel buio. <br />Se lo tocchi si arrabbia e prova a morderti, ruggendo furioso.</p><p>Avere paura è normale e ti aiuta a crescere. Con l’aiuto di mamma e papà, impara a rafforzare la fiducia in te stesso e a crescere sereno e forte.</p>",
+			"topic": "la paura",
+		 "isBought": true,
+			"img_left": {
+					"svg": "cattivo_01",
+					"background": "#000000"
+			},
+			"img_center": {
+					"svg": "cattivo_02",
+					"background": "#000000"
+			},
+			"img_right": {
+					"svg": "cattivo_03",
+					"background": "#000000"
+			}
+		},
+		"boccuccia": {
+			"title": "Boccuccia",
+			"web_title": "<span style=\"color: #CB021A;\">boc</span>cuc<span style=\"color: #CB021A;\">cia</span>",
+			"android_title": "<font fgcolor=\"#FFCB021A\">boc</font>cuc<font fgcolor=\"#FFCB021A\">cia</font>",
+			"subtitle": "è piccola",
+			"description": "<p>… ma quanti suoni fa? Bacia, singhiozza, tossisce, ride, strilla…</p><p>Imita i suoni della bocca e impara i loro nomi.</p>",
+			"topic": "suoni onomatopeici",
+			"img_left": {
+					"background": "#000000"
+			},
+			"img_center": {
+					"background": "#000000"
+			},
+			"img_right": {
+					"background": "#000000"
+			}
+		},
+		"bimbo": {
+			"title": "Bimbo",
+			"web_title": "<span style=\"color: #CB021A;\">b</span><span style=\"color: #E56D96;\">i</span><span style=\"color: #CB021A;\">mbo</span>",
+			"android_title": "<font fgcolor=\"#CB021A\">b</font><font fgcolor=\"#E56D96\">i</font><font fgcolor=\"#CB021A\">mbo</font>",
+			"subtitle": "si emoziona",
+			"description": "<p>Se è triste, aiutalo a sorridere. Se piange, rendilo gioioso.</p><p>Scopri i sentimenti umani e le loro espressioni.</p>",
+			"topic": "le emozioni",
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"giocoliere": {
+			"title": "Giocoliere",
+			"web_store_title": "<span style=\"color: #008847;\">gi</span>oc<span style=\"color: #CB021A;\">ol</span>ie<span style=\"color: #3754A0;\">re</span>",
+			"android_store_title": "<font fgcolor=\"#FF008847\">gi</font>oc<font fgcolor=\"#FFCB021A\">ol</font>ie<font fgcolor=\"#FF3754A0\">re</font>",
+			"subtitle": "sta in equilibrio",
+			"description": "<p>È precario e può crollare.</p><p>Aiutalo a trovare il suo equilibrio e imparerai i principi della legge gravitazionale.</p>",
+			"topic": "l’equilibrio",
+			"img_left": {
+					"background": "#000000"
+			},
+			"img_center": {
+					"svg": "giocoliere_screenshot_02",
+					"background": "#000000"
+			},
+			"img_right": {
+					"background": "#000000"
+			}
+		},
+		"egliocchi": {
+			"title": "E gli occhi?/Eccoli",
+			"web_store_title": "<span style=\"color: #CB021A;\">E gli occhi?</span> <span style=\"color: #008847;\">E</span><span style=\"color: #CB021A;\">cc</span><span style=\"color: #008847;\">oli</span>",
+			"android_store_title": "<font fgcolor=\"#FFCB021A;\">E gli occhi?</font> <font fgcolor=\"#FF008847;\">E</font><font fgcolor=\"#FFCB021A;\">cc</font><font fgcolor=\"#FF008847;\">oli</font>",
+			"subtitle": "è la tua faccia?",
+			"description": "<p>Non ha gli occhi, ma si trasforma e ha tanti nasi, bocche e occhi tra cui puoi scegliere, per comporre la faccia che ti è più simpatica.</p><p>Divertiti a ricostruire le altre facce o a crearne nuove, divertenti, spaventose, buffe…</p>",
+			"topic": "combinazioni",
+			"img_left": {
+					"svg": "egliocchi",
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"svg": "eccoli",
+					"background": "#000000"
+			},
+			"img_right": {
+					"background": "#000000"
+			}
+		},
+		"silenzioso": {
+			"title": "Silenzioso",
+			"web_title": "<span style=\"color: #CB021A;\">silenzioso</span>",
+			"android_title": "<font fgcolor=\"#FFCB021A\">silenzioso</font>",
+			"subtitle": "è un gran chiacchierone",
+			"description": "<p>Non ha la bocca, ma non sta mai zitto.</p><p>Trova il modo per farlo tacere e salverai le tue povere orecchie.</p>",
+			"topic": "parole e voci",
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"masi": {
+			"title": "Ma no/Ma sì!",
+			"web_title": "ma <span style=\"color: #CB021A;\">no</span>/ma <span style=\"color: #CB021A;\">sì!</span>",
+			"android_title": "ma <font fgcolor=\"#FFCB021A\">no</font>/ma <font fgcolor=\"#FFCB021A\">sì!</font>",
+			"subtitle": "ma che disordine!",
+			"description": "<p>Un colpo di vento ha mischiato occhi, bocche e nasi.</p><p>Aiutali a tornare come prima e saremo tutti felici e contenti.</p>",
+			"topic": "rapporto giusto-sbagliato",
+			"img_left": {
+					"background": "#000000"
+			},
+			"img_center": {
+					"background": "#000000"
+			},
+			"img_right": {
+					"background": "#000000"
+			}
+		},
+		"cucu": {
+			"title": "Cucù",
+			"web_title": "<span style=\"color: #008847;\">c</span>u<span style=\"color: #008847;\">c</span>ù",
+			"android_title": "<font fgcolor=\"#FFFFF69B\">chicchirichì</font>",
+			"subtitle": "si nasconde",
+			"description": "<p>Uno strano tipo verde scappa se lo tocchi. Dov’è? È un gran fifone o sta giocando a nascondino?</p>",
+			"topic": "rapporto dentro-fuori",
+		 "isBought": true,
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"svg": "cucu_1",
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"svg": "cucu_2_fear_03",
+					"background": "#FFFFFF"
+			}
+		},
+		"raffreddato": {
+			"title": "Raffreddato",
+			"web_title": "<span style=\"color: #3754A0;\">r</span><span style=\"color: #E46810\">affreddato</span>",
+			"android_title": "<font fgcolor=\"#FF3754A0\">r</font><font fgcolor=\"#FFE46810\">affreddato</font>",
+			"subtitle": "vive le quattro  stagioni",
+			"description": "<p>Balla tra i fiori, si abbronza al sole, si ripara dalla pioggia, diventa un pupazzo di neve.</p><p>Conosci i colori, i suoni e le sensazioni delle quattro stagioni.</p>",
+			"topic": "le stagioni",
+			"img_left": {
+					"background": "#000000"
+			},
+			"img_center": {
+					"background": "#000000"
+			},
+			"img_right": {
+					"background": "#000000"
+			}
+		},
+		"alieno": {
+			"title": "Alieno",
+			"web_title": "<span style=\"color: #F44900;\">a</span><span style=\"color: #3754A0;\">lien</span><span style=\"color: #F44900;\">o</span>",
+			"android_title": "<font fgcolor=\"#FFF44900\">a</font><font fgcolor=\"#FF3754A0\">lien</font><font fgcolor=\"#FFF44900\">o</font>",
+			"subtitle": "vive in un altro mondo",
+			"description": "<p>È strano, diverso e molto simpatico. Si trasforma con incredibili metamorfosi per farti divertire.</p>",
+			"topic": "gli alieni",
+			"img_left": {
+					"background": "#000000"
+			},
+			"img_center": {
+					"background": "#000000"
+			},
+			"img_right": {
+					"background": "#000000"
+			}
+		},
+		"oh": {
+			"title": "Oh!",
+			"web_title": "oh<span style=\"color: #CB021A\">!</span>",
+			"android_title": "oh<font fgcolor=\"#FFCB021A\">!</font>",
+			"subtitle": "conosce solo le vocali",
+			"description": "<p>…e le pronuncia benissimo.</p><p>Impara le vocali e come cambiano con gli accenti.</p>",
+			"topic": "le vocali",
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"chebuio": {
+			"title": "Che buio",
+			"web_title": "<span style=\"color: #008847;\">che </span><span style=\"color: #fff;\">buio</span>",
+			"web_store_title": "<span style=\"color: #008847;\">che</span> buio",
+			"android_title": "<font fgcolor=\"#FFFFF69B\">chicchirichì</font>",
+			"android_store_title": "<font fgcolor=\"#FF008847\">che </font><font fgcolor=\"#FFFFFFFF\">buio</font>",
+			"subtitle": "ma chi sarà?",
+			"description": "<p>Chi si nasconde dietro quei due grossi occhi?</p><p>Accendi la luce e scoprilo.</p>",
+			"topic": "sorprese",
+			"img_left": {
+					"svg": "chebuio",
+					"background": "#000000"
+			},
+			"img_center": {
+					"svg": "chebuio_eccoli_01",
+					"background": "#000000"
+			},
+			"img_right": {
+					"svg": "eccoli",
+					"background": "#FFFFFF"
+			}
+		},
+		"arrossisco": {
+			"title": "Arrossisco",
+			"web_title": "<span style=\"color: #CB021A;\">arro</span>ss<span style=\"color: #CB021A;\">isco</span>",
+			"android_title": "<font fgcolor=\"#FFCB021A\">arro</font>ss<font fgcolor=\"#FFCB021A\">isco</font>",
+			"subtitle": "è un camaleonte",
+			"description": "<p>Si emoziona e cambia colore.</p><p>Scopri, tinte, note e verbi insieme a lui.</p>",
+			"topic": "i colori",
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"nero": {
+			"title": "Nero",
+			"web_title": "nero",
+			"android_title": "nero",
+			"subtitle": "fa tic tac",
+			"description": "<p>Sposta le sue lancette e passa dal giorno alla notte.</p><p>Impara come scorre il tempo e come si scrivono le ore del giorno</p>",
+			"topic": "le ore del giorno",
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"testascura": {
+			"title": "Testa chiara/Testa scura",
+			"web_title": "testa chiara/testa scura",
+			"android_title": "testa chiara/testa scura",
+			"subtitle": "bianco o nero",
+			"description": "<p>Da una testa escono tante idee, grandi e piccole. Creane tante, sempre nuove, come farebbe un artista o un ingegnere.</p><p>Girale, schiacciale, allargale, invertile usando la tua creatività e la tua fantasia. È un bel gioco che non finisce mai.</p>",
+			"topic": "rapporto positivo-negativo",
+		 "isBought": true,
+			"img_left": {
+					"background": "#000000"
+			},
+			"img_center": {
+					"background": "#000000"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"ciao": {
+			"title": "Ciao",
+			"web_title": "<span style=\"color: #CD031B;\">ciao</span>",
+			"android_title": "<font fgcolor=\"#FFFFF69B\">chicchirichì</font>",
+			"subtitle": "ti saluta da ogni dove",
+			"description": "<p>È un grande viaggiatore e un poliglotta.</p><p>Imparerai che la stessa parola si può dire in tante lingue diverse.</p>",
+			"topic": "le lingue straniere",
+			"img_left": {
+					"background": "#FFFFFF"
+			},
+			"img_center": {
+					"background": "#FFFFFF"
+			},
+			"img_right": {
+					"background": "#FFFFFF"
+			}
+		},
+		"ovale": {
+			"title": "Ovale",
+			"web_title": "<span style=\"color: #fff;\">ovale</span>",
+			"android_title": "<font fgcolor=\"#FFFFFFFF\">ovale</font>",
+			"web_store_title": "ovale",
+			"android_store_title": "ovale",
+			"subtitle": "muta forma",
+			"description": "<p>Una figura contiene l’altra, come scatole cinesi.</p><p>Scopri le figure geometriche e i loro nomi.</p>",
+			"topic": "forme e dimensioni",
+			"img_left": {
+					"background": "#000000"
+			},
+			"img_center": {
+					"background": "#000000"
+			},
+			"img_right": {
+					"background": "#000000"
+			}
+		},
+		"nonce": {
+			"title": "Non c’è",
+			"web_title": "<span style=\"color: #FFF69B;\">chicchirichì</span>",
+			"android_title": "<font fgcolor=\"#FFFFF69B\">chicchirichì</font>",
+			"subtitle": "svanisce",
+			"description": "<p>Eppure era lì. Dove sarà andato? È scappato o è diventato invisibile?</p><p>Impara i modi in cui si può sparire e ricomparire.</p>",
+			"topic": "assenza",
+			"img_left": {
+					"svg": "facce_cover",
+					"background": "#000000"
+			},
+			"img_center": {
+					"background": "#000000"
+			},
+			"img_right": {
+					"svg": "facce_cover",
+					"background": "#000000"
+			}
+		}
+	}
+}

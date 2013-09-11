@@ -16,14 +16,25 @@
 </head>
 <body>
 <!-- Home -->
-<div data-role="page" id="page1">
+<div data-role="page" id="options" class="page sub-page">
     <div data-role="content">
+						<div class="container">
+								<div id="header">
+										<div class="ui-grid-a">
+												<div class="ui-block-a">
+														<a href="forparents_it.html"><</a>
+												</div>
+												<div class="ui-block-b">
+														<h1>Opzioni</h1>
+												</div>
+										</div>
+								</div>
         <form action="">
 										<div data-role="fieldcontain">
-														<label for="selectmenu2">
+														<label for="lang">
 																		Lingua:
 														</label>
-														<select id="selectmenu2" name="lang">
+														<select id="lang" name="lang">
 																		<option value="it">
 																						Italiano
 																		</option>
@@ -31,6 +42,25 @@
 																						English
 																		</option>
 														</select>
+										</div>
+										<div data-role="fieldcontain">
+														<label for="protection">
+																		Protezione:
+														</label>
+														<select id="lang" name="lang">
+																		<option value="password">
+																						Password
+																		</option>
+																		<option value="calc">
+																						Risolvi operazioni matematiche
+																		</option>
+														</select>
+										</div>
+										<div data-role="fieldcontain">
+														<label for="password">
+																		Password
+														</label>
+														<input name="password" id="password" placeholder="" value="" type="text">
 										</div>
 										<div id="autooffline" data-role="fieldcontain">
 														<fieldset data-role="controlgroup" data-type="vertical">
@@ -72,6 +102,17 @@
 										</div>
 										<input type="submit" data-icon="edit" data-iconpos="left" value="Salva">
         </form>
+						</div><!--.container-->
+						<script>
+if(window.localStorage.getItem("userPreferredLanguage")){
+$('#lang option').removeAttr("selected");
+$('#lang option[value="'+window.localStorage.getItem("userPreferredLanguage")+'"]').attr("selected","selected");
+$("#lang").change(function(){
+		window.localStorage.setItem("userPreferredLanguage", this.value);
+		console.log(window.localStorage.getItem("userPreferredLanguage"));
+});
+}
+						</script>
     </div>
 </div>
 </body>
