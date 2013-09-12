@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var audioFilesPath = 'res/raw/';
 var app = {
 		// Application Constructor
 		initialize: function() {
@@ -102,28 +103,6 @@ var app = {
 						imagesArray[x]=new Image();
 						imagesArray[x].src=imageFilesArray[x];
 					}
-				}
-				var audioFilesPath = 'res/raw/';
-				var preloadAudios = function(audioFilesArray){
-						for (var x=0;x<audioFilesArray.length;x++){
-								$('<audio id="'+audioFilesArray[x]+'"><source src="'+audioFilesPath+audioFilesArray[x]+'.mp3" type="audio/mpeg" preload="auto"></audio>').appendTo('.content');
-						}
-				}
-				var playRandomAudio = function(audioFilesArray){
-						var audioFile = getRandomValueFromArray(audioFilesArray);
-						console.log('Playing random audio ('+audioFile+')');
-						$('#'+audioFile)[0].play();
-						audioFilesArray = null;
-				}
-				var playAudio = function(audioFilesArray){
-						var audioFilesArrayType = $.type(audioFilesArray);
-						console.log('Playing audio from '+audioFilesArrayType);
-						if(audioFilesArrayType === "array"){
-								playRandomAudio(audioFilesArray);
-						} else if(audioFilesArrayType === "string"){
-								$('#'+audioFilesArray)[0].play();
-						}
-						audioFilesArray = null;
 				}
 				function changePage(pageUrl,interval){
 						setTimeout(function(){
@@ -216,8 +195,8 @@ page B---pageshow
 						preloadImages(imageFiles);
 						cattivo_am_sounds = ["cattivo_sound_am_001","cattivo_sound_am_002","cattivo_sound_am_003"];
 						cattivo_bu_sounds = ["cattivo_sound_bu_001"];
-						preloadAudios(cattivo_am_sounds);
-						preloadAudios(cattivo_bu_sounds);
+//						preloadAudios(cattivo_am_sounds);
+//						preloadAudios(cattivo_bu_sounds);
 				});
 				$(document).on('pageshow', '#cattivo-inapp', function(event){
 						var isBuTime;
