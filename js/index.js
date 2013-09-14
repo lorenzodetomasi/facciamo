@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var audioFilesPath = 'res/raw/';
 var app = {
 		// Application Constructor
 		initialize: function() {
@@ -35,7 +34,6 @@ var app = {
 		// The scope of 'this' is the event. In order to call the 'receivedEvent'
 		// function, we must explicity call 'app.receivedEvent(...);'
 		onDeviceReady: function() {
-				var firstPage = 'splash';
 				var defaultLanguage = 'it';
 				var navigatorLanguage = navigator.language || navigator.userLanguage;
 				if(!window.localStorage.getItem("userPreferredLanguage")){
@@ -79,24 +77,6 @@ var app = {
 				window.localStorage.setItem("faces", JSON.stringify(defaultFaces));
 				var faces = JSON.parse(window.localStorage.getItem("faces"));
 				console.log(faces);
-				//random number generator
-				var get_random = function(i){
-					return Math.floor(Math.random()*i);
-				}
-				//random time duration generator
-				var getRandomTime = function(){
-					return Math.floor(Math.random()*11)*1000;
-				}
-				var getRandomValueFromArray = function(arrayName){
-					var x = Math.floor(Math.random()*arrayName.length);
-					return arrayName[x];
-				}
-				Array.prototype.shuffle = function() {
-					var s = [];
-					while (this.length) s.push(this.splice(Math.random() * this.length, 1)[0]);
-					while (s.length) this.push(s.pop());
-					return this;
-				};
 				var preloadImages = function(imageFilesArray){
 					var imagesArray = new Array();
 					for (var x=0;x<imageFilesArray.length;x++){
@@ -108,32 +88,6 @@ var app = {
 						setTimeout(function(){
 								$.mobile.changePage(pageUrl);
 						}, interval);
-				}
-				function checkAnimatingClass(){
-						
-				}
-				var animate = function(target,classAttribute,audioFilesArray){
-						if(target.hasClass("animating") && !target.hasClass("blinks")){
-								console.log("Animation "+target.attr("class")+" is being played");
-						} else {
-								var audioFilesArrayType = $.type(audioFilesArray);
-								if(audioFilesArrayType === "string" || audioFilesArrayType === "array"){
-										playAudio(audioFilesArray);
-										audioFilesArray = null;
-								} else {
-										console.log('No sound')
-								}
-								target.addClass(classAttribute);
-								audioFilesArray = null;
-						}
-				}
-				function menuKeyDown() {
-						console.log('Menu button pressed.');
-				}
-				document.addEventListener("backbutton", backKeyDown, true);
-				function backKeyDown() {
-						console.log('Back button pressed.');
-						$.mobile.changePage('menu_'+window.localStorage.getItem("userPreferredLanguage")+'.html');
 				}
 /*
 multi page template
@@ -195,21 +149,13 @@ page B---pageshow
 						preloadImages(imageFiles);
 						cattivo_am_sounds = ["cattivo_sound_am_001","cattivo_sound_am_002","cattivo_sound_am_003"];
 						cattivo_bu_sounds = ["cattivo_sound_bu_001"];
-//						preloadAudios(cattivo_am_sounds);
-//						preloadAudios(cattivo_bu_sounds);
+						preloadAudios(cattivo_am_sounds,'cattivo_am');
+						preloadAudios(cattivo_bu_sounds,'cattivo_bu');
+						console.log(audios);
 				});
 				$(document).on('pageshow', '#cattivo-inapp', function(event){
-						var isBuTime;
-						function initBuTimer(){
-								isBuTime = false;
-								console.log('Bu Timer initialized')
-								setTimeout(function(){
-										isBuTime = true;
-										console.log('It’s bu time!');
-								},20000);
-						}
 						var face = $(".face");
-						initBuTimer();
+						initTimer('bu',20000);
 						face.height(face.width());
 						face.bind("webkitAnimationStart oAnimationStart msAnimationStart animationstart", function(e){
 								console.log($(this).attr("class")+' animation started');
@@ -227,7 +173,7 @@ page B---pageshow
 										$(this).removeClass("bites");
 								}
 								if($(this).hasClass("bu")){
-										initBuTimer();
+										initTimer('bu',20000);
 										$(this).removeClass("bu");
 								}
 								if($(this).hasClass("starts")){
@@ -241,11 +187,11 @@ page B---pageshow
 						animate(face,"starts");
 						face.on("tap",function(event){
 								console.log("Face tapped");
-								console.log('isBuTime :'+isBuTime);
-								if(isBuTime == true){
-										animate(face,"bu",cattivo_bu_sounds);
+								console.log('isBuTime: '+timers.bu);
+								if(timers.bu == true){
+										animate(face,"bu",audios.cattivo_bu);
 								} else {
-										animate(face,"bites",cattivo_am_sounds);
+										animate(face,"bites",audios.cattivo_am);
 								}
 						});
 				});

@@ -514,38 +514,41 @@ body,
   background-position-y: 0%;
   background-position-x: 0%;
   background-size: auto 100%;
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
 }
 
-/* line 332, ../sass/app.scss */
+/* line 335, ../sass/app.scss */
 #chicchirichi-inapp #gallo {
   background-image: url("../res/raw/chicchirichi_gallo_sprite.svg");
 }
 
-/* line 337, ../sass/app.scss */
+/* line 340, ../sass/app.scss */
 #cattivo-inapp #cattivo {
   background-image: url("../res/raw/cattivo_sprite.svg");
   background-position-x: 33.33333%;
 }
-/* line 340, ../sass/app.scss */
+/* line 343, ../sass/app.scss */
 #cattivo-inapp #cattivo.starts {
   background-position-x: 0%;
   animation: cattivo_opens_eyes 0.2s step-end 1s forwards;
   -webkit-animation: cattivo_opens_eyes 0.2s step-end 1s forwards;
   /* Safari and Chrome */
 }
-/* line 345, ../sass/app.scss */
+/* line 348, ../sass/app.scss */
 #cattivo-inapp #cattivo.blinks {
   animation: cattivo_blinks_eyes 0.4s step-end 0 forwards;
   -webkit-animation: cattivo_blinks_eyes 0.4s step-end 0 forwards;
   /* Safari and Chrome */
 }
-/* line 349, ../sass/app.scss */
+/* line 352, ../sass/app.scss */
 #cattivo-inapp #cattivo.bites {
   animation: cattivo_bites 0.4s step-end 0 forwards;
   -webkit-animation: cattivo_bites 0.4s step-end 0 forwards;
   /* Safari and Chrome */
 }
-/* line 353, ../sass/app.scss */
+/* line 356, ../sass/app.scss */
 #cattivo-inapp #cattivo.bu {
   animation: cattivo_bu 0.4s step-end 0 forwards;
   -webkit-animation: cattivo_bu 0.4s step-end 0 forwards;
@@ -553,145 +556,145 @@ body,
 }
 
 @-webkit-keyframes cattivo_opens_eyes {
-  /* line 360, ../sass/app.scss */
+  /* line 363, ../sass/app.scss */
   0% {
     background-position-x: 0%;
   }
 
-  /* line 363, ../sass/app.scss */
+  /* line 366, ../sass/app.scss */
   33.33333333333333% {
     background-position-x: 11.11111%;
   }
 
-  /* line 366, ../sass/app.scss */
+  /* line 369, ../sass/app.scss */
   66.66666666666666% {
     background-position-x: 22.22222%;
   }
 
-  /* line 369, ../sass/app.scss */
+  /* line 372, ../sass/app.scss */
   100% {
     background-position-x: 33.33333%;
   }
 }
 
 @-webkit-keyframes cattivo_blinks_eyes {
-  /* line 374, ../sass/app.scss */
+  /* line 377, ../sass/app.scss */
   0% {
     background-position-x: 33.33333%;
   }
 
-  /* line 377, ../sass/app.scss */
+  /* line 380, ../sass/app.scss */
   16.66666666666666% {
     background-position-x: 22.22222%;
   }
 
-  /* line 380, ../sass/app.scss */
+  /* line 383, ../sass/app.scss */
   33.33333333333333% {
     background-position-x: 11.11111%;
   }
 
-  /* line 383, ../sass/app.scss */
+  /* line 386, ../sass/app.scss */
   50% {
     background-position-x: 0%;
   }
 
-  /* line 386, ../sass/app.scss */
+  /* line 389, ../sass/app.scss */
   66.66666666666666% {
     background-position-x: 11.11111%;
   }
 
-  /* line 389, ../sass/app.scss */
+  /* line 392, ../sass/app.scss */
   83.33333333333333% {
     background-position-x: 22.22222%;
   }
 
-  /* line 392, ../sass/app.scss */
+  /* line 395, ../sass/app.scss */
   100% {
     background-position-x: 33.33333%;
   }
 }
 
 @-webkit-keyframes cattivo_bites {
-  /* line 397, ../sass/app.scss */
+  /* line 400, ../sass/app.scss */
   0% {
     background-position-x: 33.33333%;
   }
 
-  /* line 400, ../sass/app.scss */
+  /* line 403, ../sass/app.scss */
   16.66666666666666% {
     background-position-x: 44.44444%;
   }
 
-  /* line 403, ../sass/app.scss */
+  /* line 406, ../sass/app.scss */
   33.33333333333333% {
     background-position-x: 55.55556%;
   }
 
-  /* line 406, ../sass/app.scss */
+  /* line 409, ../sass/app.scss */
   50% {
     background-position-x: 66.66667%;
   }
 
-  /* line 409, ../sass/app.scss */
+  /* line 412, ../sass/app.scss */
   66.66666666666666% {
     background-position-x: 55.55556%;
   }
 
-  /* line 412, ../sass/app.scss */
+  /* line 415, ../sass/app.scss */
   83.33333333333333% {
     background-position-x: 44.44444%;
   }
 
-  /* line 415, ../sass/app.scss */
+  /* line 418, ../sass/app.scss */
   100% {
     background-position-x: 33.33333%;
   }
 }
 
 @-webkit-keyframes cattivo_bu {
-  /* line 420, ../sass/app.scss */
+  /* line 423, ../sass/app.scss */
   0% {
     background-position-x: 0%;
   }
 
-  /* line 423, ../sass/app.scss */
+  /* line 426, ../sass/app.scss */
   16.66666666666666% {
     background-position-x: 77.77778%;
   }
 
-  /* line 426, ../sass/app.scss */
+  /* line 429, ../sass/app.scss */
   33.33333333333333% {
     background-position-x: 88.88889%;
   }
 
-  /* line 429, ../sass/app.scss */
+  /* line 432, ../sass/app.scss */
   50% {
     background-position-x: 100%;
   }
 
-  /* line 432, ../sass/app.scss */
+  /* line 435, ../sass/app.scss */
   66.66666666666666% {
     background-position-x: 88.88889%;
   }
 
-  /* line 435, ../sass/app.scss */
+  /* line 438, ../sass/app.scss */
   83.33333333333333% {
     background-position-x: 77.77778%;
   }
 
-  /* line 438, ../sass/app.scss */
+  /* line 441, ../sass/app.scss */
   100% {
     background-position-x: 0%;
   }
 }
 
 @media screen and (min-width: 480px) {
-  /* line 443, ../sass/app.scss */
+  /* line 446, ../sass/app.scss */
   .page {
     font-size: 1.4em;
   }
 
-  /* line 446, ../sass/app.scss */
+  /* line 449, ../sass/app.scss */
   #text-container {
     font-size: 2.2em;
   }

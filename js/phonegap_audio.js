@@ -1,32 +1,65 @@
-if(!getRandomValueFromArray){
-				var getRandomValueFromArray = function(arrayName){
-					var x = Math.floor(Math.random()*arrayName.length);
-					return arrayName[x];
-				}
-}
-var preloadAudios = function(audioFilesArray){
+var preloadAudios = function(audioFilesArray,collectionName){
+		function isAppLoaded(audio){
+				console.log(collection[audioFilesArray[x]]);
+				console.log('Sound preloaded: '+audio.src);
+				return audio;
+		}
+		var filesToLoad = audioFilesArray.length;
+		var filesLoaded = 0;
+		collectionName = typeof collectionName !== 'undefined' ? collectionName : false;
+		if(collectionName){
+				audios[collectionName] = new Object();
+				var collection = audios[collectionName];
+		} else {
+				var collection = audios;
+		}
 		for (var x=0;x<audioFilesArray.length;x++){
-				$('<audio id="'+audioFilesArray[x]+'"><source src="'+audioFilesPath+audioFilesArray[x]+'.mp3" type="audio/mpeg" preload="auto"></audio>').appendTo('.content');
+				console.log(x+'/'+audioFilesArray.length);
+				console.log(collection);
+				var src = audioFilesPath+audioFilesArray[x]+'.mp3';
+				if (typeof Audio != "undefined") {
+						collection[audioFilesArray[x]] = new Audio(src);
+				} else if (typeof device != "undefined") {
+						// Android needs the search path explicitly specified
+						if (device.platform == 'Android') {
+								src = '/android_asset/www/' + src;
+								collection[audioFilesArray[x]] = new Media(src,
+										function onSuccess() {
+												// release the media resource once finished playing
+												collection[audioFilesArray[x]].release();
+										},
+										function onError(e){
+												console.log("error playing sound: " + JSON.stringify(e));
+										}
+								);
+						}
+				} else {
+						console.log("no sound API to preload and play: " + src);
+				}
+				collection[audioFilesArray[x]].src = src;
+				console.log('canplaythrough: '+collection[audioFilesArray[x]].canplaythrough);
+				collection[audioFilesArray[x]].addEventListener('canplaythrough', isAppLoaded(collection[audioFilesArray[x]]), false);
+//				$('<audio id="'+audioFilesArray[x]+'"><source src="'+audioFilesPath+audioFilesArray[x]+'.mp3" type="audio/mpeg" preload="auto"></audio>').appendTo('.content');
 		}
+		filesLoaded = 0;
 }
-var playRandomAudio = function(audioFilesArray){
-		var audioFile = getRandomValueFromArray(audioFilesArray);
-		console.log('Playing random audio ('+audioFile+')');
-		var src = audioFilesPath+audioFile+'.mp3';
-		console.log(src);
-		PlayAudioFile(src);
-//						$('#'+audioFile)[0].play();
-		audioFilesArray = null;
+var playRandomAudio = function(audios){
+		console.log(audios);
+		property = getRandom(audios);
+		var audio = audios[property];
+		console.log('Playing random audio ('+property+')');
+		console.log(audio);
+		return audio.play();
 }
-var playAudio = function(audioFilesArray){
-		var audioFilesArrayType = $.type(audioFilesArray);
-		console.log('Playing audio from '+audioFilesArrayType);
-		if(audioFilesArrayType === "array"){
-				playRandomAudio(audioFilesArray);
-		} else if(audioFilesArrayType === "string"){
+var playAudio = function(audios){
+		console.log(audios);
+		if(toType(audios) == "object"){
+				playRandomAudio(audios);
+		} else if(toType(audios) == "array"){
+				playRandomAudio(audios);
+		}/* else if(toType(audios) == "string"){
 				$('#'+audioFilesArray)[0].play();
-		}
-		audioFilesArray = null;
+		}*/
 }
 var PlayAudioFile = function(src){
 		/* Sources:
