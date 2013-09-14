@@ -52,7 +52,8 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
 				<plugin name="Notification" value="org.apache.cordova.Notification"/>
-
+				<plugin name="Media" value="org.apache.cordova.AudioHandler" />
+				
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
