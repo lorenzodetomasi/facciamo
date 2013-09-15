@@ -7,7 +7,7 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		 */
 		function isAppLoaded(audio){
 				console.log('Sound preloaded: '+audio.src);
-				console.log(collection[audioFilesArray[x]]);
+//				console.log(collection[audioFilesArray[x]]);
 				return audio;
 		}
 		var filesToLoad = audioFilesArray.length;
@@ -19,17 +19,17 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		} else {
 				var collection = audios;
 		}
+		console.log(device);
+		console.log('platform: '+device.platform);
 		for (var x=0;x<audioFilesArray.length;x++){
-				console.log(collection);
-				console.log('device: '+typeof device);
-				console.log('platform: '+device.platform);
+//				console.log(collection);
 				var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 				if (typeof Audio != "undefined") {
 						collection[audioFilesArray[x]] = new Audio(src);
 				} else if (typeof device != "undefined") {
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
-								src = '/android_asset/www/' + src;
+								src = '/assets/www/' + src;
 								console.log(src);
 								collection[audioFilesArray[x]] = new Media(src,
 										function onSuccess() {
