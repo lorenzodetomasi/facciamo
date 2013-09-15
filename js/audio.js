@@ -39,7 +39,7 @@ var preloadAudios = function(audioFilesArray,collectionName){
 						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
-								src = '/assets/www/' + src;
+								src = '/android_asset/www/' + src;
 						}
 						console.log("Preloading Phonegap Media ("+src+")");
 						collection[audioFilesArray[x]] = new Media(src, onSuccess, onError);
