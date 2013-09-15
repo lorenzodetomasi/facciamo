@@ -24,9 +24,6 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		for (var x=0;x<audioFilesArray.length;x++){
 //				console.log(collection);
 				var src = audioFilesPath+audioFilesArray[x]+'.mp3';
-				if (typeof Audio != "undefined") {
-						collection[audioFilesArray[x]] = new Audio(src);
-				}
 				if (typeof device != "undefined") {
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
