@@ -5,11 +5,6 @@ var preloadAudios = function(audioFilesArray,collectionName){
 			* http://www.w3schools.com/tags/ref_av_dom.asp,
 			* http://docs.phonegap.com/en/2.0.0/cordova_media_media.md.html
 		 */
-		function isAppLoaded(audio){
-				console.log(collection[audioFilesArray[x]]);
-				console.log('Sound preloaded: '+audio.src);
-				return audio;
-		}
 		var filesToLoad = audioFilesArray.length;
 		var filesLoaded = 0;
 		collectionName = typeof collectionName !== 'undefined' ? collectionName : false;
@@ -22,31 +17,34 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		console.log(collection);
 		console.log(device);
 		console.log('platform: '+device.platform);
-		for (var x=0;x<audioFilesArray.length;x++){
-				var src = audioFilesPath+audioFilesArray[x]+'.mp3';
-				if (typeof Audio != "undefined") {
+		if (typeof Audio != "undefined") {
+				for (var x=0;x<audioFilesArray.length;x++){
+						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 						collection[audioFilesArray[x]] = new Audio(src);
-				} else if (typeof device != "undefined") {
+						collection[audioFilesArray[x]].load();
+						console.log('HTML5 Audio Preloaded ('+src+')');
+				}
+		} else if (typeof device != "undefined") {
+				console.log('Using Phonegap Media API ('+device.platform+')');
+				function onSuccess() {
+								console.log("Phonegap Media Preloaded");
+				}
+		
+				function onError(error) {
+								alert('code: '    + error.code    + '\n' +
+														'message: ' + error.message + '\n');
+				}
+				for (var x=0;x<audioFilesArray.length;x++){
+						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
 								src = '/android_asset/www/' + src;
-								console.log(src);
-								collection[audioFilesArray[x]] = new Media(src,
-										function onSuccess() {
-												// release the media resource once finished playing
-												collection[audioFilesArray[x]].release();
-										},
-										function onError(e){
-												console.log("error playing sound: " + JSON.stringify(e));
-										}
-								);
 						}
-				} else {
-						console.log("no sound API to preload and play: " + src);
+						console.log("Preloading Phonegap Media ("+src+")");
+						collection[audioFilesArray[x]] = new Media(src, onSuccess, onError);
 				}
-				collection[audioFilesArray[x]].src = src;
-				collection[audioFilesArray[x]].addEventListener('canplaythrough', isAppLoaded(collection[audioFilesArray[x]]), false);
-//				$('<audio id="'+audioFilesArray[x]+'"><source src="'+audioFilesPath+audioFilesArray[x]+'.mp3" type="audio/mpeg" preload="auto"></audio>').appendTo('.content');
+		} else {
+				console.log("no sound API to preload and play: " + src);
 		}
 		filesLoaded = 0;
 }
