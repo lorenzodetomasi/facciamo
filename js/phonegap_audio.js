@@ -26,10 +26,11 @@ var preloadAudios = function(audioFilesArray,collectionName){
 				var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 				if (typeof Audio != "undefined") {
 						collection[audioFilesArray[x]] = new Audio(src);
-				} else if (typeof device != "undefined") {
+				}
+				if (typeof device != "undefined") {
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
-								src = '/assets/www/' + src;
+								src = '/asset/www/' + src;
 								console.log(src);
 								collection[audioFilesArray[x]] = new Media(src,
 										function onSuccess() {
