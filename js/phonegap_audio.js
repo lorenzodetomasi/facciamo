@@ -6,8 +6,8 @@ var preloadAudios = function(audioFilesArray,collectionName){
 			* http://docs.phonegap.com/en/2.0.0/cordova_media_media.md.html
 		 */
 		function isAppLoaded(audio){
+				console.log(collection[audioFilesArray[x]]);
 				console.log('Sound preloaded: '+audio.src);
-//				console.log(collection[audioFilesArray[x]]);
 				return audio;
 		}
 		var filesToLoad = audioFilesArray.length;
@@ -19,16 +19,18 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		} else {
 				var collection = audios;
 		}
+		console.log(collection);
 		console.log(device);
 		console.log('platform: '+device.platform);
 		for (var x=0;x<audioFilesArray.length;x++){
-//				console.log(collection);
 				var src = audioFilesPath+audioFilesArray[x]+'.mp3';
-				if (typeof device != "undefined") {
+				if (typeof Audio != "undefined") {
+						collection[audioFilesArray[x]] = new Audio(src);
+				} else if (typeof device != "undefined") {
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
 								src = '/android_asset/www/' + src;
-								console.log('platform: '+device.platform+'(src: '+src+')');
+								console.log(src);
 								collection[audioFilesArray[x]] = new Media(src,
 										function onSuccess() {
 												// release the media resource once finished playing
