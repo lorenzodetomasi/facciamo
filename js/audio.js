@@ -16,15 +16,16 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		}
 		console.log(collection);
 		console.log(device);
+		console.log('cordova: '+device.cordova);
 		console.log('platform: '+device.platform);
-		if (typeof Audio != "undefined") {
+		if(device.cordova == undefined && typeof Audio != "undefined") {
 				for (var x=0;x<audioFilesArray.length;x++){
 						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 						collection[audioFilesArray[x]] = new Audio(src);
 						collection[audioFilesArray[x]].load();
 						console.log('HTML5 Audio Preloaded ('+src+')');
 				}
-		} else if (typeof device != "undefined") {
+		} else if (device.cordova != undefined && typeof Media != "undefined") {
 				console.log('Using Phonegap Media API ('+device.platform+')');
 				function onSuccess() {
 								console.log("Phonegap Media Preloaded");
