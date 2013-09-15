@@ -39,7 +39,7 @@ var preloadAudios = function(audioFilesArray,collectionName){
 						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
-//								src = '/android_asset/www/' + src;
+								src = '/assets/www/' + src;
 						}
 						console.log("Preloading Phonegap Media ("+src+")");
 						collection[audioFilesArray[x]] = new Media(src, onSuccess, onError);
@@ -50,7 +50,7 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		filesLoaded = 0;
 }
 var playRandomAudio = function(audios){
-		console.log(audios);
+//		console.log(audios);
 		property = getRandom(audios);
 		var audio = audios[property];
 		console.log('Playing random audio ('+property+')');
@@ -58,33 +58,10 @@ var playRandomAudio = function(audios){
 		return audio.play();
 }
 var playAudio = function(audios){
-		console.log(audios);
+//		console.log(audios);
 		if(toType(audios) == "object"){
 				playRandomAudio(audios);
 		} else if(toType(audios) == "array"){
 				playRandomAudio(audios);
-		}
-}
-var PlayAudioFile = function(src){
-		// HTML5 Audio
-		if (typeof Audio != "undefined") { 
-				new Audio(src).play() ;
-				// Phonegap media
-		} else if (typeof device != "undefined") {
-				// Android needs the search path explicitly specified
-				if (device.platform == 'Android') {
-						src = '/android_asset/www/' + src;
-				}
-				var mediaRes = new Media(src,
-				function onSuccess() {
-						// release the media resource once finished playing
-						mediaRes.release();
-				},
-				function onError(e){
-						console.log("error playing sound: " + JSON.stringify(e));
-				});
-				mediaRes.play();
-		} else {
-				console.log("no sound API to play: " + src);
 		}
 }
