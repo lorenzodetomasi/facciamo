@@ -30,8 +30,8 @@ var preloadAudios = function(audioFilesArray,collectionName){
 				if (typeof device != "undefined") {
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
-								src = '/asset/www/' + src;
-								console.log(src);
+								src = '/android_asset/www/' + src;
+								console.log('platform: '+device.platform+'(src: '+src+')');
 								collection[audioFilesArray[x]] = new Media(src,
 										function onSuccess() {
 												// release the media resource once finished playing
