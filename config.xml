@@ -53,6 +53,7 @@
     -->
 				<plugin name="Notification" value="org.apache.cordova.Notification"/>
 				<plugin name="Media" value="org.apache.cordova.AudioHandler" />
+				<plugin name="Media" value="CDVSound" />
 				
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

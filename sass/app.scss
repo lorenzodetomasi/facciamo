@@ -342,20 +342,20 @@ body,
 				background-position-x: 0%+(100/9)*3;
 				&.starts {
 						background-position-x: 0%;
-						animation: cattivo_opens_eyes 0.2s step-end 1s forwards;
-						-webkit-animation: cattivo_opens_eyes 0.2s step-end 1s forwards; /* Safari and Chrome */
+						animation: cattivo_opens_eyes 0.5s step-end 1s forwards;
+						-webkit-animation: cattivo_opens_eyes 0.5s step-end 1s forwards; /* Safari and Chrome */
 				}
 				&.blinks {
-						animation: cattivo_blinks_eyes 0.4s step-end 0 forwards;
-						-webkit-animation: cattivo_blinks_eyes 0.4s step-end 0 forwards; /* Safari and Chrome */
+						animation: cattivo_blinks_eyes 0.5s step-end 0 forwards;
+						-webkit-animation: cattivo_blinks_eyes 0.5s step-end 0 forwards; /* Safari and Chrome */
 				}
 				&.bites {
-						animation: cattivo_bites 0.4s step-end 0 forwards;
-						-webkit-animation: cattivo_bites 0.4s step-end 0 forwards; /* Safari and Chrome */
+						animation: cattivo_bites 1s step-end 0 forwards;
+						-webkit-animation: cattivo_bites 1s step-end 0 forwards; /* Safari and Chrome */
 				}
 				&.bu {
-						animation: cattivo_bu 0.4s step-end 0 forwards;
-						-webkit-animation: cattivo_bu 0.4s step-end 0 forwards; /* Safari and Chrome */
+						animation: cattivo_bu 1s step-end 0 forwards;
+						-webkit-animation: cattivo_bu 1s step-end 0 forwards; /* Safari and Chrome */
 				}
 		}
 }

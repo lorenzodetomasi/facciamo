@@ -1,4 +1,10 @@
 var preloadAudios = function(audioFilesArray,collectionName){
+		/* Sources:
+		 * http://stackoverflow.com/questions/10556437/audio-not-working-with-phonegap,
+			* http://www.9lessons.info/2013/04/play-notification-sound-using-jquery.html,
+			* http://www.w3schools.com/tags/ref_av_dom.asp,
+			* http://docs.phonegap.com/en/2.0.0/cordova_media_media.md.html
+		 */
 		function isAppLoaded(audio){
 				console.log(collection[audioFilesArray[x]]);
 				console.log('Sound preloaded: '+audio.src);
@@ -23,6 +29,7 @@ var preloadAudios = function(audioFilesArray,collectionName){
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
 								src = '/android_asset/www/' + src;
+								console.log(src);
 								collection[audioFilesArray[x]] = new Media(src,
 										function onSuccess() {
 												// release the media resource once finished playing
@@ -57,17 +64,9 @@ var playAudio = function(audios){
 				playRandomAudio(audios);
 		} else if(toType(audios) == "array"){
 				playRandomAudio(audios);
-		}/* else if(toType(audios) == "string"){
-				$('#'+audioFilesArray)[0].play();
-		}*/
+		}
 }
 var PlayAudioFile = function(src){
-		/* Sources:
-		 * http://stackoverflow.com/questions/10556437/audio-not-working-with-phonegap,
-			* http://www.9lessons.info/2013/04/play-notification-sound-using-jquery.html,
-			* http://www.w3schools.com/tags/ref_av_dom.asp,
-			* http://docs.phonegap.com/en/2.0.0/cordova_media_media.md.html
-		 */
 		// HTML5 Audio
 		if (typeof Audio != "undefined") { 
 				new Audio(src).play() ;
