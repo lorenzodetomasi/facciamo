@@ -143,9 +143,11 @@ page B---pageshow
 						var face = $(".face");
 						face.height(face.width());
 						function testAudio(src) {
+/*
 										if (device.platform == 'Android') {
 														src = '/android_asset/www/' + src;
 										}
+*/
 										var media = new Media(src, success, error_error);
 										console.log(media);
 										console.log('imagesArray:');
