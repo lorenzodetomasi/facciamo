@@ -152,6 +152,7 @@ page B---pageshow
             console.log("playAudio():Audio Error: "+err);
 						});
 						// Play audio
+						console.log(my_media);
 						my_media.play();
 				});
 				$(document).on('pagebeforeshow', '#cattivo-inapp', function(event){
