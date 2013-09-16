@@ -142,20 +142,23 @@ page B---pageshow
 				$(document).on('pageshow', '#chicchirichi-inapp', function(event){
 						var face = $(".face");
 						face.height(face.width());
-						var my_media = new Media("file:///android_asset/www/audio/chicchirichi_gallo_sound_animal_001.mp3",
-        // success callback
-        function() {
-          console.log("playAudio():Audio Success");
-        },
-        // error callback
-        function(err) {
-										console.log("Audio Error: ");
-										console.log(err);
-								});
-						// Play audio
-						console.log(my_media);
-						console.log(imagesArray);
-						my_media.play();
+						function testAudio(src) {
+										if (device.platform == 'Android') {
+														src = '/android_asset/www/' + src;
+										}
+										var media = new Media(src, success, error_error);
+										console.log(media);
+										console.log('imagesArray:');
+										console.log(imagesArray);
+										media.play();
+						}
+						function success() {
+										// ignore
+						}
+						function error_error(e) {
+										alert('great error');
+										alert(e.message);
+						}
 				});
 				$(document).on('pagebeforeshow', '#cattivo-inapp', function(event){
 						$("#text").html(json.faces.cattivo.web_title);
