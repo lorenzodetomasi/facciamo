@@ -145,14 +145,16 @@ page B---pageshow
 						var my_media = new Media("/android_asset/www/audio/chicchirichi_gallo_sound_animal_001.mp3",
         // success callback
         function() {
-            console.log("playAudio():Audio Success");
+          console.log("playAudio():Audio Success");
         },
         // error callback
         function(err) {
-            console.log("playAudio():Audio Error: "+err);
-						});
+										console.log("Audio Error: ");
+										console.log(err);
+								});
 						// Play audio
 						console.log(my_media);
+						console.log(imagesArray);
 						my_media.play();
 				});
 				$(document).on('pagebeforeshow', '#cattivo-inapp', function(event){
