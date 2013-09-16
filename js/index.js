@@ -142,7 +142,7 @@ page B---pageshow
 				$(document).on('pageshow', '#chicchirichi-inapp', function(event){
 						var face = $(".face");
 						face.height(face.width());
-						var my_media = new Media("/android_asset/www/audio/chicchirichi_gallo_sound_animal_001.mp3",
+						var my_media = new Media("file:///android_asset/www/audio/chicchirichi_gallo_sound_animal_001.mp3",
         // success callback
         function() {
           console.log("playAudio():Audio Success");
