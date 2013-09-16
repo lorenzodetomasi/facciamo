@@ -138,6 +138,15 @@ page B---pageshow
 						preloadImages(imageFiles);
 						chicchirichi_gallo_animal_sounds = ["chicchirichi_gallo_sound_animal_001"];
 						chicchirichi_gallo_kid_sounds = ["chicchirichi_gallo_sound_kid_001"];
+						var media = new Media("/android_asset/res/raw/chicchirichi_gallo_sound_animal_001.mp3", success, error_error); 
+						media.play();
+						function success() { 
+								alert('success!'); 
+						} 
+						function error_error(e) { 
+								alert('error!' + e.message);	
+						} 
+
 				});
 				$(document).on('pageshow', '#chicchirichi-inapp', function(event){
 						var face = $(".face");
