@@ -154,11 +154,15 @@ page B---pageshow
 						}
 						$("#testaudio").on("tap", function(event){
 								var src = $("#testaudiosrc").val();
+								audios = null;
+								audios = new Object;
 								preloadAudios([src]);
 								playAudio(audios);
 //								testAudio(src);
 						});
 						$("#testaudioselect").on("tap", function(event){
+								audios = null;
+								audios = new Object;
 								var src = $("#selectsrc").val();
 								preloadAudios([src]);
 								playAudio(audios);
