@@ -157,7 +157,9 @@ page B---pageshow
 								audios = null;
 								audios = new Object;
 								preloadAudios([src]);
-								playAudio(audios);
+								setTimeout(function(){
+										playAudio(audios);
+								},5000);
 //								testAudio(src);
 						});
 						$("#testaudioselect").on("tap", function(event){
@@ -165,7 +167,9 @@ page B---pageshow
 								audios = new Object;
 								var src = $("#selectsrc").val();
 								preloadAudios([src]);
-								playAudio(audios);
+								setTimeout(function(){
+										playAudio(audios);
+								},5000);
 //								testAudio(src);
 						});
 				});
