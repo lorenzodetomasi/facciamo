@@ -20,7 +20,7 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		console.log('platform: '+device.platform);
 		if(device.cordova == undefined && typeof Audio != "undefined") {
 				for (var x=0;x<audioFilesArray.length;x++){
-//						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
+						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 						var src = audioFilesArray[x];
 						collection[audioFilesArray[x]] = new Audio(src);
 						collection[audioFilesArray[x]].load();
@@ -38,11 +38,11 @@ var preloadAudios = function(audioFilesArray,collectionName){
 														'message: ' + error.message + '\n');
 				}
 				for (var x=0;x<audioFilesArray.length;x++){
-//						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
+						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 						var src = audioFilesArray[x];
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
-//								src = '/android_asset/www/' + src;
+								src = '/android_asset/www/' + src;
 						}
 						console.log("Preloading Phonegap Media ("+src+")");
 						collection[audioFilesArray[x]] = new Media(src, onSuccess, onError);
