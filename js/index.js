@@ -132,16 +132,7 @@ page B---pageshow
 								}
 						});
 				});
-				$(document).on('pagebeforeshow', '#chicchirichi-inapp', function(event){
-						$("#text").html(json.faces.chicchirichi.web_title);
-						var imageFiles = new Array('res/raw/chicchirichi_gallo_sprite.svg');
-						preloadImages(imageFiles);
-						chicchirichi_gallo_animal_sounds = ["chicchirichi_gallo_sound_animal_001"];
-						chicchirichi_gallo_kid_sounds = ["chicchirichi_gallo_sound_kid_001"];
-				});
-				$(document).on('pageshow', '#chicchirichi-inapp', function(event){
-						var face = $(".face");
-						face.height(face.width());
+				$(document).on('pageshow', '#testaudio-inapp', function(event){
 						function testAudio(src) {
 /*
 										if (device.platform == 'Android') {
@@ -161,11 +152,22 @@ page B---pageshow
 										alert('great error');
 										alert(e.message);
 						}
-testAudio('file:///android_asset/www/chicchirichi_gallo_sound_animal_001.mp3');
-testAudio('/android_asset/www/chicchirichi_gallo_sound_animal_001.mp3');
-testAudio('/www/chicchirichi_gallo_sound_animal_001.mp3');
-testAudio('chicchirichi_gallo_sound_animal_001.mp3');
-testAudio('file://android_asset/www/chicchirichi_gallo_sound_animal_001.mp3');
+						$("#testaudio").on("tap", function(event){
+								var src = $("#testaudiosrc").val();
+								console.log(src);
+								testAudio(src);
+						});
+				});
+				$(document).on('pagebeforeshow', '#chicchirichi-inapp', function(event){
+						$("#text").html(json.faces.chicchirichi.web_title);
+						var imageFiles = new Array('res/raw/chicchirichi_gallo_sprite.svg');
+						preloadImages(imageFiles);
+						chicchirichi_gallo_animal_sounds = ["chicchirichi_gallo_sound_animal_001"];
+						chicchirichi_gallo_kid_sounds = ["chicchirichi_gallo_sound_kid_001"];
+				});
+				$(document).on('pageshow', '#chicchirichi-inapp', function(event){
+						var face = $(".face");
+						face.height(face.width());
 				});
 				$(document).on('pagebeforeshow', '#cattivo-inapp', function(event){
 						$("#text").html(json.faces.cattivo.web_title);
