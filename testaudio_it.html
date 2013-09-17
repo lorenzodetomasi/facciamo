@@ -20,7 +20,20 @@
 		<body>
 			<div data-role="page" id="testaudio-inapp" class="page">
 						<div data-role="content" class="content">
-								<input id="testaudiosrc" name="testaudiosrc" type="textfield" value="file:///android_asset/www/chicchirichi_gallo_sound_animal_001.mp3" style="width: 100%;" /><button id="testaudio">testAudio</button>
+								<input id="testaudiosrc" name="testaudiosrc" type="textfield" value="file:///android_asset/www/chicchirichi_gallo_sound_animal_001.mp3" style="width: 100%;" />
+								<button id="testaudio">testAudio (textfield)</button>
+								<select id="selectsrc" name="selectsrc">
+										<option value="file:///android_asset/www/chicchirichi_gallo_sound_animal_001.mp3">file:///android_asset/www/chicchirichi_gallo_sound_animal_001.mp3</option>
+										<option value="file://android_asset/www/chicchirichi_gallo_sound_animal_001.mp3">file://android_asset/www/chicchirichi_gallo_sound_animal_001.mp3</option>
+										<option value="/android_asset/www/chicchirichi_gallo_sound_animal_001.mp3">/android_asset/www/chicchirichi_gallo_sound_animal_001.mp3</option>
+										<option value="android_asset/www/chicchirichi_gallo_sound_animal_001.mp3">android_asset/www/chicchirichi_gallo_sound_animal_001.mp3</option>
+										<option value="/android_asset/chicchirichi_gallo_sound_animal_001.mp3">/android_asset/chicchirichi_gallo_sound_animal_001.mp3</option>
+										<option value="/www/chicchirichi_gallo_sound_animal_001.mp3">/www/chicchirichi_gallo_sound_animal_001.mp3</option>
+										<option value="www/chicchirichi_gallo_sound_animal_001.mp3">www/chicchirichi_gallo_sound_animal_001.mp3</option>
+										<option value="/chicchirichi_gallo_sound_animal_001.mp3">/chicchirichi_gallo_sound_animal_001.mp3</option>
+										<option value="chicchirichi_gallo_sound_animal_001.mp3">/www/chicchirichi_gallo_sound_animal_001.mp3</option>
+								</select>
+								<button id="testaudioselect">testAudio (select)</button>
 						</div><!--.content-->
 				</div>
 		</body>

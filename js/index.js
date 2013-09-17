@@ -156,6 +156,13 @@ page B---pageshow
 								var src = $("#testaudiosrc").val();
 								console.log(src);
 								testAudio(src);
+								playAudio(src);
+						});
+						$("#testaudioselect").on("tap", function(event){
+								var src = $("#selectsrc").val();
+								console.log(src);
+								testAudio(src);
+								playAudio(src);
 						});
 				});
 				$(document).on('pagebeforeshow', '#chicchirichi-inapp', function(event){
