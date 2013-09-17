@@ -161,6 +161,11 @@ page B---pageshow
 										alert('great error');
 										alert(e.message);
 						}
+testAudio('file:///android_asset/www/chicchirichi_gallo_sound_animal_001.mp3');
+testAudio('/android_asset/www/chicchirichi_gallo_sound_animal_001.mp3');
+testAudio('/www/chicchirichi_gallo_sound_animal_001.mp3');
+testAudio('chicchirichi_gallo_sound_animal_001.mp3');
+testAudio('file://android_asset/www/chicchirichi_gallo_sound_animal_001.mp3');
 				});
 				$(document).on('pagebeforeshow', '#cattivo-inapp', function(event){
 						$("#text").html(json.faces.cattivo.web_title);
