@@ -179,10 +179,26 @@ page B---pageshow
 						preloadImages(imageFiles);
 						chicchirichi_gallo_animal_sounds = ["chicchirichi_gallo_sound_animal_001"];
 						chicchirichi_gallo_kid_sounds = ["chicchirichi_gallo_sound_kid_001"];
+						preloadAudios(chicchirichi_gallo_animal_sounds,'chicchirichi_gallo_animal');
+						preloadAudios(chicchirichi_gallo_kid_sounds,'chicchirichi_gallo_kid');
 				});
 				$(document).on('pageshow', '#chicchirichi-inapp', function(event){
-						var face = $(".face");
-						face.height(face.width());
+						var stage = $("#stage");
+						var canvas = document.getElementById('chicchirichi');
+						canvas.width = stage.width();
+						canvas.height = stage.width();
+						var context = canvas.getContext('2d');
+						createSpritesheet('chicchirichi','chicchirichi_gallo','res/raw/chicchirichi_gallo_sprite.svg',768);
+						spritesheet = sprites.chicchirichi.chicchirichi_gallo;
+						var framesSequence = {"chicchirichi": [1,2,3,4,5,6,5,4,3,2,1]};
+						framesSequence = [1,2,3,4,5,6,5,4,3,2,1];
+						setSprite(spritesheet, framesSequence);
+						var renderingWidth = canvas.width,
+										renderingHeight = canvas.height,
+										durationMs = 500;
+						console.log(sprites);
+						animateSprite(context, spritesheet, framesSequence, renderingWidth, renderingHeight, durationMs);
+//						animateCanvasSprite(chicchirichi, source, 500, 6);
 				});
 				$(document).on('pagebeforeshow', '#cattivo-inapp', function(event){
 						$("#text").html(json.faces.cattivo.web_title);

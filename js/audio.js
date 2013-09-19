@@ -7,21 +7,21 @@ var preloadAudios = function(audioFilesArray,collectionName){
 		 */
 		var filesToLoad = audioFilesArray.length;
 		var filesLoaded = 0;
-		collectionName = typeof collectionName !== 'undefined' ? collectionName : false;
-		if(collectionName){
-				audios[collectionName] = new Object();
-				var collection = audios[collectionName];
+		collectionId = typeof collectionId !== 'undefined' ? collectionId : false;
+		if(collectionId){
+				audios[collectionId] = new Object();
+				var collection = audios[collectionId];
+				console.log('New audio collection "'+collectionId+'" created:');
+				console.log(collection);
 		} else {
 				var collection = audios;
 		}
-		console.log(collection);
 		console.log(device);
 		console.log('cordova: '+device.cordova);
 		console.log('platform: '+device.platform);
 		if(device.cordova == undefined && typeof Audio != "undefined") {
 				for (var x=0;x<audioFilesArray.length;x++){
 						var src = audioFilesPath+audioFilesArray[x]+'.mp3';
-						var src = audioFilesArray[x];
 						collection[audioFilesArray[x]] = new Audio(src);
 						collection[audioFilesArray[x]].load();
 						console.log('HTML5 Audio Preloaded ('+src+')');
