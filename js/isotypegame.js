@@ -223,7 +223,7 @@ function drawSpriteFrame(context,spritesheet,frameNum, renderingWidth, rendering
 function animateSprite(context, spritesheet, framesSequence, renderingWidth, renderingHeight, durationMs, fps){
 		/* Based on:
 		 * http://stackoverflow.com/questions/16540744/update-animation-based-on-time-in-javascriptindependent-of-frames
-			*
+			* http://awardwinningfjords.com/2012/03/08/image-sequences.html
 			*/
 		fps = typeof fps !== 'undefined' ? fps : false;
 		if(durationMs){
