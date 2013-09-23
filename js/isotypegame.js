@@ -59,18 +59,28 @@ function rightNow() {
 var getRandomTime = function(){
 	return Math.floor(Math.random()*11)*1000;
 }
-var initTimer = function(id,duration){
+/*
+var initTimer = function(id, duration, type, action){
+		type = typeof type !== 'undefined' ? type : 'timeout';
 		if(timers){
 				timers[id] = false;
-				console.log('Timer initialized ('+id+')')
-				setTimeout(function(){
-						timers[id] = true;
-						console.log('Timeout (timers.'+id+' = true)');
-				},duration);
+				console.log('Timer initialized ('+id+')');
+				if(type == 'interval'){
+						timers[id] = new Object();
+						timers[id]['id'] = setInterval(action, duration);
+				} else {
+						timers[id] = new Object();
+						timers[id]['id'] = setTimeout(function(){
+								timers[id]['status'] = true;
+								console.log('Timeout (timers.'+id+'.status = '+timers[id]['status']+')');
+								console.log(timers[id]);
+						},duration);
+				}
 		} else {
 				console.log('timers Object undefined');
 		}
 }
+*/
 var getRandom = function(obj){
 		console.log('getRandom from '+toType(obj));
 		console.log(obj);

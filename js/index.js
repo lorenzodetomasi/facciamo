@@ -218,7 +218,15 @@ page B---pageshow
 				});
 				$(document).on('pageshow', '#cattivo-inapp', function(event){
 						var face = $(".face");
-						initTimer('bu',20000);
+						timers['bu'] = new Object();
+						function initTimerBu(){
+								timers['bu']['status'] = false;
+								timers['bu']['id'] = setTimeout(function(){
+										timers['bu']['status'] = true;
+										console.log('Timeout (timers.bu.status = '+timers['bu']['status']+')');
+								},20000);
+						}
+						initTimerBu();
 						face.height(face.width());
 						face.bind("webkitAnimationStart oAnimationStart msAnimationStart animationstart", function(e){
 								console.log($(this).attr("class")+' animation started');
@@ -236,13 +244,13 @@ page B---pageshow
 										$(this).removeClass("bites");
 								}
 								if($(this).hasClass("bu")){
-										initTimer('bu',20000);
+										initTimerBu();
 										$(this).removeClass("bu");
 								}
 								if($(this).hasClass("starts")){
 										$(this).removeClass("starts");
 										console.log("Starting blinking every 3s");
-										setInterval(function(){
+										timers.blinksInterval = setInterval(function(){
 												animate(face,"blinks");
 										},3000);
 								}
@@ -250,13 +258,17 @@ page B---pageshow
 						animate(face,"starts");
 						face.on("tap",function(event){
 								console.log("Face tapped");
-								console.log('isBuTime: '+timers.bu);
-								if(timers.bu == true){
+								console.log('isBuTime: '+timers.bu.status);
+								if(timers.bu.status == true){
 										animate(face,"bu",audios.cattivo_bu);
 								} else {
 										animate(face,"bites",audios.cattivo_am);
 								}
 						});
+				});
+				$(document).on('pagebeforehide', '#cattivo-inapp', function(event){
+						clearInterval(timers.blinksInterval);
+						console.log('Interval cleared (blinksInterval)');
 				});
 		}
 }
