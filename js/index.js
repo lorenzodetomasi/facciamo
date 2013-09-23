@@ -177,10 +177,11 @@ page B---pageshow
 						$("#text").html(json.faces.chicchirichi.web_title);
 						var imageFiles = new Array('res/raw/chicchirichi_gallo_sprite.svg');
 						preloadImages(imageFiles);
-						chicchirichi_gallo_animal_sounds = ["chicchirichi_gallo_sound_animal_001"];
-						chicchirichi_gallo_kid_sounds = ["chicchirichi_gallo_sound_kid_001"];
+						chicchirichi_gallo_animal_sounds = "chicchirichi_gallo_sound_animal_001";
+						chicchirichi_gallo_kid_sounds = "chicchirichi_gallo_sound_kid_001";
 						preloadAudios(chicchirichi_gallo_animal_sounds,'chicchirichi_gallo_animal');
 						preloadAudios(chicchirichi_gallo_kid_sounds,'chicchirichi_gallo_kid');
+						console.log(audios);
 				});
 				$(document).on('pageshow', '#chicchirichi-inapp', function(event){
 						var stage = $("#stage");
@@ -200,7 +201,8 @@ page B---pageshow
 						drawSpriteFrame(context, spritesheet, frameNum, renderingWidth, renderingHeight);
 						console.log(sprites);
 						$('#chicchirichi').on("tap",function(event){
-								playAudio('chicchirichi_gallo_animal');
+								console.log(audios.chicchirichi_gallo_animal.chicchirichi_gallo_sound_animal_001);
+								playAudio(audios.chicchirichi_gallo_animal.chicchirichi_gallo_sound_animal_001);
 								animateSprite(context, spritesheet, framesSequence, renderingWidth, renderingHeight, durationMs);
 						});
 				});
