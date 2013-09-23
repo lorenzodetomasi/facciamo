@@ -194,16 +194,15 @@ page B---pageshow
 //						var framesSequence = {"chicchirichi": [1,2,3,4,5,6,5,4,3,2,1]};
 						framesSequence = [1,2,3,4,5,6,5,4,3,2,1];
 						setSprite(spritesheet, framesSequence);
-						var frameNum = 1,
-										renderingWidth = canvas.width,
+						var renderingWidth = canvas.width,
 										renderingHeight = canvas.height,
 										durationMs = 500;
-						drawSpriteFrame(context, spritesheet, frameNum, renderingWidth, renderingHeight);
+						drawSpriteFrame(context, spritesheet, 1, renderingWidth, renderingHeight);
 						console.log(sprites);
 						$('#chicchirichi').on("tap",function(event){
-								console.log(audios.chicchirichi_gallo_animal.chicchirichi_gallo_sound_animal_001);
-								playAudio(audios.chicchirichi_gallo_animal.chicchirichi_gallo_sound_animal_001);
+								console.log('#chicchirichi tapped');
 								animateSprite(context, spritesheet, framesSequence, renderingWidth, renderingHeight, durationMs);
+								playAudio(audios.chicchirichi_gallo_animal.chicchirichi_gallo_sound_animal_001);
 						});
 				});
 				$(document).on('pagebeforeshow', '#cattivo-inapp', function(event){
