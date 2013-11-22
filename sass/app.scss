@@ -274,10 +274,17 @@ body,
 				}
 		}
 }
-#stage {
+#stage,
+#text-container,
+#nav-button,
+#nav-container,
+.face {
 		position: absolute;
-		top: 0;
 		left: 0;
+}
+#stage {
+		z-index: 1000;
+		top: 0;
 		right: 0;
 		width: 100%;
 		height: 100%;
@@ -287,15 +294,14 @@ body,
 }
 #text-container,
 #nav-container {
-		position: absolute;
-		left: 0;
+		top: 0;
 		right: 0;
 		width: 100%;
-		height: $default_area_height;
+		height: auto;
 }
 #text-container {
+		z-index: 2000;
 		display: table;
-		top: 0;
 		font-size: $default_area_font_size;
 				animation: hide 1s linear 5s forwards;
 				-webkit-animation: hide 1s linear 5s forwards; /* Safari and Chrome */
@@ -314,13 +320,9 @@ body,
 				}
 		}
 }
-#nav-container {
-	top: 0px - $default_area_height;
-}
 .face {
-		position: absolute;
+		z-index: 3000;
 		bottom: 0;
-		left: 0;
 		right: 0;
 		width: 100%;
 		background-repeat: no-repeat;
@@ -330,6 +332,30 @@ body,
 -webkit-transform: translateZ(0);    
 -webkit-backface-visibility: hidden;
 -webkit-perspective: 1000;
+}
+#nav-button {
+		z-index: 4000;
+		top: 0;
+		height: 48px;
+		width: 48px;
+		background: url('../res/raw/ui_button_triangle.svg') no-repeat top left;
+}
+#nav-container {
+		top: 0px - $default_area_height;
+		z-index: 5000;
+		-webkit-transition: top .5s linear 0s;
+		a {
+				text-decoration: none;
+				float: left;
+				@include box-sizing(border-box);
+				padding: 2.5%;
+				width: 0% + (100/3);
+				img {
+						width: 100%;
+						height: auto;
+						background-color: #fff;
+				}
+		}
 }
 #chicchirichi-inapp {
 		#gallo {

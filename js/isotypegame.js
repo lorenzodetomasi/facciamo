@@ -32,17 +32,29 @@ var IsNumeric = function(val){
     }
     return true
 };
+var toNumber = function(val){
+		return val.replace(/[^-\d\.]/g, '');
+}
 function isInt(n) {
    return typeof n === 'number' && parseFloat(n) == parseInt(n, 10) && !isNaN(n);
 }
+function isOddNumber(n){
+		return n  % 2;
+}
 
 var preloadImages = function(imageFilesArray){
-	var imagesArray = new Array();
-	for (var x=0;x<imageFilesArray.length;x++){
-		imagesArray[x]=new Image();
-		imagesArray[x].src=imageFilesArray[x];
-	}
+		var imagesArray = new Array();
+		for (var x=0;x<imageFilesArray.length;x++){
+				imagesArray[x]=new Image();
+				imagesArray[x].src=imageFilesArray[x];
+		}
 }
+function changePage(pageUrl,interval){
+		setTimeout(function(){
+				$.mobile.changePage(pageUrl);
+		}, interval);
+}
+
 //random number generator
 var getRandomNumber = function(i){
 	return Math.floor(Math.random()*i);
@@ -306,11 +318,55 @@ var showNavContainer = function(){
 		$("#nav").addClass('visible');
 	}
 };
-var generateNav = function(previousFaceID,nextFaceID){
-	if($("#nav-button")){
-		var html = '<div id="nav-container"><div id="login"><label for="password">Password</label><input type="password" /></div><div id="nav"><a id="previous_face" class="thumbnail" href="'+previousFaceID+'-index.html" style="background-image: url(images/'+previousFaceID+'.png);"></a><a id="home" class="thumbnail" href="index.html" style="background-image: url(images/cover.png);"></a><a id="next_face" class="thumbnail" href="'+nextFaceID+'-index.html" style="background-image: url(images/'+nextFaceID+'.png);"></a></div></div>';
-		$("#nav-button").append(html);
-	}
+var generateNav = function(currentFaceID){
+		if(json.faces){
+				var inAppStoreFacesIDs = Object.keys(inAppStore);
+				var inAppStoreCurrentFaceIndex = inAppStoreFacesIDs.indexOf(currentFaceID);
+				var inAppStorePreviousFaceID = inAppStoreFacesIDs[inAppStoreCurrentFaceIndex - 1];
+				var inAppStoreNextFaceID = inAppStoreFacesIDs[inAppStoreCurrentFaceIndex + 1];
+//				console.log('['+inAppStorePreviousFaceID+']['+currentFaceID+']['+inAppStoreNextFaceID+']');
+				var facesIDs = Object.keys(json.faces);
+				var previousFaceIndex = facesIDs.indexOf(inAppStorePreviousFaceID);
+				var nextFaceIndex = facesIDs.indexOf(inAppStoreNextFaceID);
+//				console.log('['+(previousFaceIndex + 1)+':'+isOddNumber(previousFaceIndex + 1)+']['+(nextFaceIndex + 1)+':'+isOddNumber(nextFaceIndex + 1)+']');
+				var previousFaceBackgroundColor = "#fff";
+				if(!isOddNumber(previousFaceIndex + 1)){
+						previousFaceBackgroundColor = "#000";
+				}
+				var nextFaceBackgroundColor = "#fff";
+				if(!isOddNumber(nextFaceIndex + 1)){
+						nextFaceBackgroundColor = "#000";
+				}
+				filesPath = 'res/raw/';
+				if($("#nav-button")){
+						var html = $('<div id="nav-container" class="visible" style="background-color: '+json.faces[currentFaceID]['web_nav_background']+'"><div id="nav"><a id="previous_face" class="thumbnail" href="'+inAppStorePreviousFaceID+'_'+window.localStorage.getItem("userPreferredLanguage")+'.html"><img src="'+filesPath+inAppStorePreviousFaceID+'.svg" style="background-color: '+previousFaceBackgroundColor+';" /></a><a id="home" class="thumbnail" href="menu_'+window.localStorage.getItem("userPreferredLanguage")+'.html"><img src="'+filesPath+'cover'+'.svg" /></a><a id="next_face" class="thumbnail" href="'+inAppStoreNextFaceID+'_'+window.localStorage.getItem("userPreferredLanguage")+'.html"><img src="'+filesPath+inAppStoreNextFaceID+'.svg" style="background-color: '+nextFaceBackgroundColor+';" /></a></div></div>');
+						html.insertAfter($("#nav-button"));
+						var navContainerHeight = $("#nav-container").height()+'px';
+						console.log('navContainerHeight: '+navContainerHeight);
+						$("#nav-container").css('top', -navContainerHeight);
+						$("#nav-button").on("tap", function(event){
+								console.log('#nav-button tapped.');
+								console.log('#nav-container top: '+$("#nav-container").css('top'));
+								if(toNumber($("#nav-container").css('top')) < 0){
+										$("#nav-container").css('top', 0);
+								}
+								$("#stage").css('z-index', 4999);
+						});
+						$("#stage").on("tap", function(event){
+								console.log('#stage tapped.');
+								if(toNumber($("#nav-container").css('top')) == 0){
+										console.log('#nav-container top: '+toNumber($("#nav-container").css('top')));
+										$("#nav-container").css('top', -$("#nav-container").height()+'px');
+										$("#stage").css('z-index', 1000);
+								}
+						});
+				}
+		} else {
+				alert('Local Storage "json" not found.');
+		}
+}
+var generatePasswordModal = function(){
+		var html = '<div id="login"><label for="password">Password</label><input type="password" /></div>';
 }
 
 /* Hide/show */

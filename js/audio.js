@@ -26,7 +26,7 @@ var preloadAudios = function(audioFilesArray,collectionId){
 				if(device.cordova == undefined && typeof Audio != "undefined") {
 						if(toType(audioFilesArray) == 'string'){
 								filesToLoad = 1;
-								src = audioFilesPath+audioFilesArray+'.mp3';
+								src = audioFilesArray;
 								collection[audioFilesArray] = new Audio(src);
 								collection[audioFilesArray].load();
 								filesLoaded++;
@@ -34,7 +34,7 @@ var preloadAudios = function(audioFilesArray,collectionId){
 						} else if(toType(audioFilesArray) == 'array') {
 								filesToLoad = audioFilesArray.length;
 								for (var x=0;x<audioFilesArray.length;x++){
-										src = audioFilesPath+audioFilesArray[x]+'.mp3';
+										src = audioFilesArray[x];
 										collection[audioFilesArray[x]] = new Audio(src);
 										collection[audioFilesArray[x]].load();
 										console.log('HTML5 Audio Preloaded ('+src+') ['+filesLoaded+'/'+filesToLoad+']');
@@ -55,13 +55,12 @@ var preloadAudios = function(audioFilesArray,collectionId){
 						}
 						if(toType(audioFilesArray) == 'string'){
 								filesToLoad = 1;
-								src = src+audioFilesPath+audioFilesArray+'.mp3';
+								src = src+audioFilesArray;
 								console.log("Preloading Phonegap Media ("+src+")");
 								collection[audioFilesArray] = new Media(src, onSuccess, onError);
 						} else if(toType(audioFilesArray) == 'array') {
 								filesToLoad = audioFilesArray.length;
 								for (var x=0;x<audioFilesArray.length;x++){
-//										var src = audioFilesPath+audioFilesArray[x]+'.mp3';
 										var src = audioFilesArray[x];
 										console.log("Preloading Phonegap Media ("+src+")");
 										collection[audioFilesArray[x]] = new Media(src, onSuccess, onError);

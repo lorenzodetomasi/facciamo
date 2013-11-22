@@ -34,6 +34,7 @@ var app = {
 		// The scope of 'this' is the event. In order to call the 'receivedEvent'
 		// function, we must explicity call 'app.receivedEvent(...);'
 		onDeviceReady: function() {
+				//$.mobile.defaultPageTransition = 'slide';
 				var defaultLanguage = 'it';
 				var navigatorLanguage = navigator.language || navigator.userLanguage;
 				if(!window.localStorage.getItem("userPreferredLanguage")){
@@ -44,51 +45,41 @@ var app = {
 								window.localStorage.setItem("userPreferredLanguage", defaultLanguage);
 						}
 				}
-				var json;
 				$.getJSON('facciamo_'+window.localStorage.getItem("userPreferredLanguage")+'.json')
-						.done(function(data){json = data;})
+						.done(function(data){
+								json = data;
+								console.log("Json loaded");
+								inAppStore = {
+										"dovesei": {
+												"isPublished": true,
+												"isBought": false
+										},
+										"chicchirichi": {
+												"isPublished": true,
+												"isBought": true
+										},
+										"cattivo": {
+												"isPublished": true,
+												"isBought": true
+										},
+								};
+								/* # Merge inAppStore in faces and create/update faces locally*/
+								if(inAppStore && json.faces){
+										jQuery.extend(true, json.faces, inAppStore);
+										if(!window.localStorage.getItem("json")){
+												console.log('Local Storage Item "json" created');
+										} else {
+												console.log('Local Storage Item "json" updated');
+										}
+										window.localStorage.setItem("json", JSON.stringify(json));
+								}
+								console.log(json);
+						})
 						.fail(function( jqxhr, textStatus, error ) {
 								var err = textStatus + ', ' + error;
-								console.log( "Request Failed: " + err);
+								console.log( "Json request failed: " + err);
 						}
 				);
-				//$.mobile.defaultPageTransition = 'slide';
-				var defaultFaces = {
-						"cucu": {
-								"isPublished": true,
-								"isBought": true
-						},
-						"testascura": {
-								"isPublished": true,
-								"isBought": true
-						},
-						"cattivo": {
-								"isPublished": true,
-								"isBought": true
-						},
-						"chicchirichi": {
-								"isPublished": true,
-								"isBought": false
-						}
-				};
-				if(!window.localStorage.getItem("faces")){
-						window.localStorage.setItem("faces", JSON.stringify(defaultFaces));
-				}
-				window.localStorage.setItem("faces", JSON.stringify(defaultFaces));
-				var faces = JSON.parse(window.localStorage.getItem("faces"));
-				console.log(faces);
-				var preloadImages = function(imageFilesArray){
-					var imagesArray = new Array();
-					for (var x=0;x<imageFilesArray.length;x++){
-						imagesArray[x]=new Image();
-						imagesArray[x].src=imageFilesArray[x];
-					}
-				}
-				function changePage(pageUrl,interval){
-						setTimeout(function(){
-								$.mobile.changePage(pageUrl);
-						}, interval);
-				}
 /*
 multi page template
 navigate from A to B
@@ -122,12 +113,12 @@ page B---pageshow
 						thumbnails.each(function(index){
 								var id = $(this).attr('id');
 								id = id.substring(0, id.indexOf("_"));
-								if(faces[id] && faces[id].isPublished && faces[id].isPublished == true){
+								if(json.faces[id] && json.faces[id].isPublished && json.faces[id].isPublished == true){
 										$(this).addClass('is_published');
 								} else {
 										$(this).addClass('not_published');
 								}
-								if(faces[id] && faces[id].isBought && faces[id].isBought == true){
+								if(json.faces[id] && json.faces[id].isBought && json.faces[id].isBought == true){
 										$(this).find('a').attr("href",id+"_"+window.localStorage.getItem("userPreferredLanguage")+".html");
 								}
 						});
@@ -177,13 +168,14 @@ page B---pageshow
 						$("#text").html(json.faces.chicchirichi.web_title);
 						var imageFiles = new Array('res/raw/chicchirichi_gallo_sprite.svg');
 						preloadImages(imageFiles);
-						chicchirichi_gallo_animal_sounds = "chicchirichi_gallo_sound_animal_001";
-						chicchirichi_gallo_kid_sounds = "chicchirichi_gallo_sound_kid_001";
+						chicchirichi_gallo_animal_sounds = "res/raw/chicchirichi_gallo_sound_animal_001.mp3";
+						chicchirichi_gallo_kid_sounds = "res/raw/chicchirichi_gallo_sound_kid_001.mp3";
 						preloadAudios(chicchirichi_gallo_animal_sounds,'chicchirichi_gallo_animal');
 						preloadAudios(chicchirichi_gallo_kid_sounds,'chicchirichi_gallo_kid');
 						console.log(audios);
 				});
 				$(document).on('pageshow', '#chicchirichi-inapp', function(event){
+						generateNav('chicchirichi');
 						var stage = $("#stage");
 						var canvas = document.getElementById('chicchirichi');
 						canvas.width = stage.width();
@@ -198,19 +190,22 @@ page B---pageshow
 										renderingHeight = canvas.height,
 										durationMs = 500;
 						drawSpriteFrame(context, spritesheet, 1, renderingWidth, renderingHeight);
-						console.log(sprites);
+						function playChicchirichi(){
+								animateSprite(context, spritesheet, framesSequence, renderingWidth, renderingHeight, durationMs);
+								playAudio(audios.chicchirichi_gallo_animal);
+						}
+						playChicchirichi();
 						$('#chicchirichi').on("tap",function(event){
 								console.log('#chicchirichi tapped');
-								animateSprite(context, spritesheet, framesSequence, renderingWidth, renderingHeight, durationMs);
-								playAudio(audios.chicchirichi_gallo_animal.chicchirichi_gallo_sound_animal_001);
+								playChicchirichi();
 						});
 				});
 				$(document).on('pagebeforeshow', '#cattivo-inapp', function(event){
 						$("#text").html(json.faces.cattivo.web_title);
 						var imageFiles = new Array('res/raw/cattivo_sprite.svg');
 						preloadImages(imageFiles);
-						cattivo_am_sounds = ["cattivo_sound_am_001","cattivo_sound_am_002","cattivo_sound_am_003"];
-						cattivo_bu_sounds = ["cattivo_sound_bu_001"];
+						cattivo_am_sounds = ["res/raw/cattivo_sound_am_001.mp3","res/raw/cattivo_sound_am_002.mp3","res/raw/cattivo_sound_am_003.mp3"];
+						cattivo_bu_sounds = ["res/raw/cattivo_sound_bu_001.mp3"];
 						preloadAudios(cattivo_am_sounds,'cattivo_am');
 						preloadAudios(cattivo_bu_sounds,'cattivo_bu');
 						console.log(audios);
