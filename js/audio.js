@@ -13,7 +13,6 @@ var preloadAudios = function(audioFilesArray,collectionId){
 				audios[collectionId] = new Object();
 				var collection = audios[collectionId];
 				console.log('New audio collection "'+collectionId+'" created:');
-				console.log(collection);
 		} else {
 				var collection = audios;
 		}
@@ -37,6 +36,7 @@ var preloadAudios = function(audioFilesArray,collectionId){
 										src = audioFilesArray[x];
 										collection[audioFilesArray[x]] = new Audio(src);
 										collection[audioFilesArray[x]].load();
+								  filesLoaded++;
 										console.log('HTML5 Audio Preloaded ('+src+') ['+filesLoaded+'/'+filesToLoad+']');
 								}
 						}
@@ -44,10 +44,10 @@ var preloadAudios = function(audioFilesArray,collectionId){
 						console.log('Using Phonegap Media API ('+device.platform+')');
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
-//								src = '/android_asset/www/';
+								src = '/android_asset/www/';
 						}
 						function onSuccess() {
-										console.log('Phonegap Media Preloaded ('+src+') ['+filesLoaded+'/'+filesToLoad+']');
+										console.log('Phonegap Media Preloaded ('+src+')');
 						}
 						function onError(error) {
 								alert('code: '    + error.code    + '\n' +
@@ -56,13 +56,14 @@ var preloadAudios = function(audioFilesArray,collectionId){
 						if(toType(audioFilesArray) == 'string'){
 								filesToLoad = 1;
 								src = src+audioFilesArray;
-								console.log("Preloading Phonegap Media ("+src+")");
+								console.log('Loading Phonegap Media ('+src+') ['+filesLoaded+'/'+filesToLoad+']');
 								collection[audioFilesArray] = new Media(src, onSuccess, onError);
-						} else if(toType(audioFilesArray) == 'array') {
+						} else {// if(toType(audioFilesArray) == 'array')
 								filesToLoad = audioFilesArray.length;
 								for (var x=0;x<audioFilesArray.length;x++){
 										var src = audioFilesArray[x];
-										console.log("Preloading Phonegap Media ("+src+")");
+								  filesLoaded++;
+										console.log('Loading Phonegap Media ('+src+') ['+filesLoaded+'/'+filesToLoad+']');
 										collection[audioFilesArray[x]] = new Media(src, onSuccess, onError);
 								}
 						}
@@ -74,19 +75,21 @@ var preloadAudios = function(audioFilesArray,collectionId){
 				console.log('preloadAudios(): no files specified');
 		}
 }
-var playRandomAudio = function(audios){
+function ObjectLength( object ) {
+    var length = 0;
+    for( var key in object ) {
+        if( object.hasOwnProperty(key) ) {
+            ++length;
+        }
+    }
+    return length;
+};
+var playAudio = function(audios){
+//		console.log('playAudio from '+toType(audios)+', typeof: '+typeof audios);
+//		console.log(audios);
+		var audiosLength = ObjectLength(audios);
 		property = getRandom(audios);
 		var audio = audios[property];
-		console.log('Playing random audio ('+property+')');
+		console.log('Playing random audio from '+audiosLength+' ('+property+')');
 		console.log(audio);
-		return audio.play();
-}
-var playAudio = function(audios){
-		console.log('playAudio from '+toType(audios)+', typeof: '+typeof audios);
-		console.log(audios);
-		if(toType(audios) == 'htmlaudioelement'){
-				return audios.play();
-		} else {
-				playRandomAudio(audios);
-		}
-}
+		return audio.play();}
