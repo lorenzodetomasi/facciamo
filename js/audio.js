@@ -44,7 +44,7 @@ var preloadAudios = function(audioFilesArray,collectionId){
 						console.log('Using Phonegap Media API ('+device.platform+')');
 						// Android needs the search path explicitly specified
 						if (device.platform == 'Android') {
-								src = '/android_asset/www/';
+//								src = '/android_asset/www/';
 						}
 						function onSuccess() {
 										console.log('Phonegap Media Preloaded ('+src+') ['+filesLoaded+'/'+filesToLoad+']');

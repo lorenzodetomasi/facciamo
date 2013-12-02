@@ -11,7 +11,7 @@
 		"string": "per i genitori"
 	},
 	"faces": {
-		"dove_sei": {
+		"dovesei": {
 			"title": "Dove sei?",
 			"subtitle": "Ti scoverà",
 			"description": "<p>È un tipo attento e segue con attenzione ogni tua mossa.</p><p>Prova a nasconderti, se ci riesci.</p>",

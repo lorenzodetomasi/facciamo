@@ -153,15 +153,9 @@ page B---pageshow
 								},5000);
 //								testAudio(src);
 						});
-						$("#testaudioselect").on("tap", function(event){
-								audios = null;
-								audios = new Object;
+						$("#selectsrc").change(function(event){
 								var src = $("#selectsrc").val();
-								preloadAudios([src]);
-								setTimeout(function(){
-										playAudio(audios);
-								},5000);
-//								testAudio(src);
+								$("#testaudiosrc").val(src);
 						});
 				});
 				$(document).on('pagebeforeshow', '#chicchirichi-inapp', function(event){
