@@ -147,11 +147,11 @@ page B---pageshow
 								var src = $("#testaudiosrc").val();
 								audios = null;
 								audios = new Object;
-								preloadAudios([src]);
+								preloadAudios(src);
 								setTimeout(function(){
-										playAudio(audios);
+//										playAudio(audios);
 								},5000);
-//								testAudio(src);
+								testAudio(src);
 						});
 						$("#selectsrc").change(function(event){
 								var src = $("#selectsrc").val();

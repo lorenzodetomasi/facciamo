@@ -16,9 +16,9 @@ var preloadAudios = function(audioFilesArray,collectionId){
 		} else {
 				var collection = audios;
 		}
-		console.log(device);
-		console.log('cordova: '+device.cordova);
-		console.log('platform: '+device.platform);
+//		console.log(device);
+//		console.log('cordova: '+device.cordova);
+//		console.log('platform: '+device.platform);
 		if(audioFilesArray){
 				var filesToLoad,
 								filesLoaded = 0;
